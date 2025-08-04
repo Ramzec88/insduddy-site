@@ -443,6 +443,23 @@
             color: white;
         }
 
+        /* Inssmart Widget Customization */
+        #inssmart-b2c {
+            border-radius: 15px !important;
+            overflow: hidden !important;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1) !important;
+        }
+
+        /* Override widget colors to match site theme */
+        #inssmart-b2c iframe {
+            border-radius: 15px !important;
+        }
+
+        /* Custom CSS for widget styling */
+        .inssmart-section {
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+        }
+
         /* Tab Buttons */
         .tab-btn:hover {
             background: linear-gradient(135deg, #667eea, #764ba2) !important;
@@ -649,7 +666,7 @@
                 <div class="footer-section">
                     <h3>Контакты</h3>
                     <p>📞 8 (925) 039-47-00</p>
-                    <p>📧 89250394700@ьmail.ru</p>
+                    <p>📧 89250394700@mail.ru</p>
                     <p>🌐 insduddy.site</p>
                 </div>
             </div>
@@ -725,15 +742,22 @@
                 existingScript.remove();
             }
             
-            // Create new script element
+            // Create widget container div
+            const widgetDiv = document.createElement('div');
+            widgetDiv.id = 'inssmart-b2c';
+            container.appendChild(widgetDiv);
+            
+            // Create new script element with your exact parameters
             const script = document.createElement('script');
             script.type = 'text/javascript';
             script.src = 'https://widgets.inssmart.ru/widgets/b2c-frame.loader.js';
             script.setAttribute('data-id', 'inssmart-b2c');
             script.setAttribute('data-origin', 'https://widgets.inssmart.ru');
             script.setAttribute('data-product', product === 'osago' ? '/osago' : '/mortgage');
-            script.setAttribute('data-token', 'ce7030c4-0d18-553d-b57d-79846bc39b7b');
-            script.setAttribute('data-secret', '2ab06316-fa50-50cf-80b9-754dd15c0246');
+            
+            // ⭐ ВАШИ РЕАЛЬНЫЕ ТОКЕНЫ ИЗ СКРИНШОТА:
+            script.setAttribute('data-token', 'cc3f4029-d8fa-5436-acfa-04d8d7924382');
+            script.setAttribute('data-secret', 'a959928a-ffdd-5358-adce-9d5f1de1432c');
             
             // Hide spinner after widget loads
             script.onload = function() {
@@ -742,8 +766,12 @@
                 }, 2000);
             };
             
-            // Append script to container
-            container.appendChild(script);
+            script.onerror = function() {
+                spinner.innerHTML = '<p style="color: #ff6b6b;">Ошибка загрузки виджета</p>';
+            };
+            
+            // Append script to head for better loading
+            document.head.appendChild(script);
         }
 
         function switchInssmartProduct(product) {
