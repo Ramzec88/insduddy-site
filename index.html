@@ -370,7 +370,7 @@
             padding: 3rem;
             border-radius: 20px;
             box-shadow: 0 20px 60px rgba(0,0,0,0.1);
-            max-width: 600px;
+            max-width: 1000px;
             margin: 0 auto;
             animation: slideInUp 0.8s ease-out;
         }
@@ -384,6 +384,72 @@
                 opacity: 1;
                 transform: translateY(0);
             }
+        }
+
+        .calculator-tabs {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-bottom: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .tab-btn {
+            padding: 12px 24px;
+            border: 2px solid #667eea;
+            background: transparent;
+            color: #667eea;
+            border-radius: 25px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .tab-btn.active,
+        .tab-btn:hover {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.3);
+        }
+
+        .widget-container {
+            min-height: 600px;
+            position: relative;
+            background: #f8f9fa;
+            border-radius: 15px;
+            overflow: hidden;
+        }
+
+        .calculator-iframe {
+            width: 100%;
+            height: 700px;
+            border: none;
+            border-radius: 15px;
+        }
+
+        .loading-spinner {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            z-index: 10;
+        }
+
+        .spinner {
+            width: 50px;
+            height: 50px;
+            border: 4px solid #f3f3f3;
+            border-top: 4px solid #667eea;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+            margin: 0 auto 1rem;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
         }
 
         .form-group {
@@ -446,50 +512,6 @@
             color: white;
         }
 
-        /* Inssmart Widget Customization */
-        #inssmart-b2c {
-            border-radius: 15px !important;
-            overflow: hidden !important;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.1) !important;
-        }
-
-        /* Override widget colors to match site theme */
-        #inssmart-b2c iframe {
-            border-radius: 15px !important;
-        }
-
-        /* Custom CSS for widget styling */
-        .inssmart-section {
-            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
-        }
-
-        /* Tab Buttons */
-        .tab-btn:hover {
-            background: linear-gradient(135deg, #667eea, #764ba2) !important;
-            color: white !important;
-        }
-
-        .tab-btn.active {
-            background: linear-gradient(135deg, #667eea, #764ba2) !important;
-            color: white !important;
-        }
-
-        /* Loading Spinner Animation */
-        @keyframes spin {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
-        }
-
-        /* Partner Cards Hover Effects */
-        .partner-card:hover {
-            transform: translateY(-10px) scale(1.02);
-            box-shadow: 0 25px 50px rgba(0,0,0,0.2);
-        }
-
-        .partner-card:hover div[style*="background: rgba(255, 255, 255, 0.2)"] {
-            background: rgba(255, 255, 255, 0.3) !important;
-            transform: scale(1.05);
-        }
         @media (max-width: 768px) {
             .hero h1 {
                 font-size: 2.5rem;
@@ -510,6 +532,20 @@
             
             .section-title {
                 font-size: 2rem;
+            }
+
+            .calculator-tabs {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .tab-btn {
+                width: 100%;
+                max-width: 250px;
+            }
+
+            .calculator-iframe {
+                height: 600px;
             }
         }
 
@@ -595,62 +631,54 @@
             </div>
         </section>
 
-    <!-- Partner Calculators Section -->
-    <section class="partners" id="calculator" style="padding: 100px 0; background: white;">
-        <div class="container">
-            <h2 class="section-title animate-on-scroll">Рассчитать стоимость страховки</h2>
-            <p style="text-align: center; font-size: 1.2rem; color: #666; margin-bottom: 3rem;" class="animate-on-scroll">
-                Воспользуйтесь калькуляторами наших проверенных партнеров для точного расчета стоимости
-            </p>
-            
-            <div class="partners-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 2rem; margin-top: 3rem;">
+        <!-- Calculator Section with direct integration -->
+        <section class="calculator" id="calculator">
+            <div class="container">
+                <h2 class="section-title animate-on-scroll">Рассчитать стоимость страховки</h2>
+                <p style="text-align: center; font-size: 1.2rem; color: #666; margin-bottom: 3rem;" class="animate-on-scroll">
+                    Воспользуйтесь нашим калькулятором для точного расчета стоимости
+                </p>
                 
-                <!-- Partner 1: Инссмарт -->
-                <div class="partner-card animate-on-scroll" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); padding: 2.5rem; border-radius: 20px; text-align: center; color: white; position: relative; overflow: hidden; transition: all 0.3s ease; cursor: pointer;" onclick="window.open('#', '_blank')">
-                    <div style="position: absolute; top: -50%; left: -50%; width: 200%; height: 200%; background: url('data:image/svg+xml,<svg xmlns=&quot;http://www.w3.org/2000/svg&quot; viewBox=&quot;0 0 100 100&quot;><circle cx=&quot;25&quot; cy=&quot;25&quot; r=&quot;2&quot; fill=&quot;rgba(255,255,255,0.1)&quot;/><circle cx=&quot;75&quot; cy=&quot;75&quot; r=&quot;1.5&quot; fill=&quot;rgba(255,255,255,0.1)&quot;/></svg>') repeat; animation: float 15s linear infinite;"></div>
-                    <div style="position: relative; z-index: 2;">
-                        <div style="width: 80px; height: 80px; background: rgba(255, 255, 255, 0.2); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1.5rem; font-size: 2rem;">🏢</div>
-                        <h3 style="font-size: 1.4rem; font-weight: 700; margin-bottom: 1rem;">Партнер Инссмарт</h3>
-                        <p style="margin-bottom: 1.5rem; opacity: 0.9; line-height: 1.5;">Профессиональный расчет ОСАГО и КАСКО с максимальными скидками</p>
-                        <div style="background: rgba(255, 255, 255, 0.2); padding: 12px 24px; border-radius: 30px; display: inline-block; font-weight: 600; backdrop-filter: blur(10px);">
-                            Рассчитать стоимость →
-                        </div>
+                <div class="calculator-card animate-on-scroll">
+                    <!-- Tabs for different insurance types -->
+                    <div class="calculator-tabs">
+                        <button class="tab-btn active" id="osago-tab" onclick="switchInsuranceType('osago')">
+                            🚗 ОСАГО
+                        </button>
+                        <button class="tab-btn" id="kasko-tab" onclick="switchInsuranceType('kasko')">
+                            🛡️ КАСКО
+                        </button>
+                        <button class="tab-btn" id="mortgage-tab" onclick="switchInsuranceType('mortgage')">
+                            🏠 Ипотека
+                        </button>
                     </div>
-                </div>
 
-                <!-- Partner 2: Universal Calculator -->
-                <div class="partner-card animate-on-scroll" style="background: linear-gradient(135deg, #ff6b6b 0%, #ffa500 100%); padding: 2.5rem; border-radius: 20px; text-align: center; color: white; position: relative; overflow: hidden; transition: all 0.3s ease; cursor: pointer;" onclick="window.open('#', '_blank')">
-                    <div style="position: absolute; top: -50%; left: -50%; width: 200%; height: 200%; background: url('data:image/svg+xml,<svg xmlns=&quot;http://www.w3.org/2000/svg&quot; viewBox=&quot;0 0 100 100&quot;><circle cx=&quot;30&quot; cy=&quot;30&quot; r=&quot;2&quot; fill=&quot;rgba(255,255,255,0.1)&quot;/><circle cx=&quot;70&quot; cy=&quot;70&quot; r=&quot;1.5&quot; fill=&quot;rgba(255,255,255,0.1)&quot;/></svg>') repeat; animation: float 20s linear infinite reverse;"></div>
-                    <div style="position: relative; z-index: 2;">
-                        <div style="width: 80px; height: 80px; background: rgba(255, 255, 255, 0.2); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1.5rem; font-size: 2rem;">🧮</div>
-                        <h3 style="font-size: 1.4rem; font-weight: 700; margin-bottom: 1rem;">Универсальный калькулятор</h3>
-                        <p style="margin-bottom: 1.5rem; opacity: 0.9; line-height: 1.5;">Сравнение предложений от ведущих страховых компаний России</p>
-                        <div style="background: rgba(255, 255, 255, 0.2); padding: 12px 24px; border-radius: 30px; display: inline-block; font-weight: 600; backdrop-filter: blur(10px);">
-                            Рассчитать стоимость →
+                    <!-- Widget Container -->
+                    <div class="widget-container">
+                        <div class="loading-spinner" id="loading-spinner">
+                            <div class="spinner"></div>
+                            <p>Загружаем калькулятор...</p>
                         </div>
+                        
+                        <iframe 
+                            id="insurance-calculator"
+                            class="calculator-iframe"
+                            src="https://widgets.inssmart.ru/contract/eosago?appId=3067e739-11bc-51d3-bdb3-aed23e20e2da&secret=ff8ef8b9-c909-5ed3-9b62-d57e432056b6"
+                            title="Калькулятор ОСАГО"
+                            style="display: none;"
+                            onload="hideSpinner()"
+                            onerror="showError()">
+                        </iframe>
                     </div>
-                </div>
-
-                <!-- Partner 3: Express Calculator -->
-                <div class="partner-card animate-on-scroll" style="background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%); padding: 2.5rem; border-radius: 20px; text-align: center; color: white; position: relative; overflow: hidden; transition: all 0.3s ease; cursor: pointer;" onclick="window.open('#', '_blank')">
-                    <div style="position: absolute; top: -50%; left: -50%; width: 200%; height: 200%; background: url('data:image/svg+xml,<svg xmlns=&quot;http://www.w3.org/2000/svg&quot; viewBox=&quot;0 0 100 100&quot;><circle cx=&quot;20&quot; cy=&quot;80&quot; r=&quot;2&quot; fill=&quot;rgba(255,255,255,0.1)&quot;/><circle cx=&quot;80&quot; cy=&quot;20&quot; r=&quot;1.5&quot; fill=&quot;rgba(255,255,255,0.1)&quot;/></svg>') repeat; animation: float 25s linear infinite;"></div>
-                    <div style="position: relative; z-index: 2;">
-                        <div style="width: 80px; height: 80px; background: rgba(255, 255, 255, 0.2); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1.5rem; font-size: 2rem;">⚡</div>
-                        <h3 style="font-size: 1.4rem; font-weight: 700; margin-bottom: 1rem;">Экспресс-расчет</h3>
-                        <p style="margin-bottom: 1.5rem; opacity: 0.9; line-height: 1.5;">Быстрый расчет за 30 секунд для всех видов страхования</p>
-                        <div style="background: rgba(255, 255, 255, 0.2); padding: 12px 24px; border-radius: 30px; display: inline-block; font-weight: 600; backdrop-filter: blur(10px);">
-                            Рассчитать стоимость →
-                        </div>
+                    
+                    <div style="text-align: center; margin-top: 2rem;">
+                        <p style="color: #666; font-size: 1rem; margin-bottom: 1rem;">🔒 Все партнеры проверены и имеют лицензии ЦБ РФ</p>
+                        <p style="color: #666; font-size: 0.9rem;">Расчет производится в режиме реального времени</p>
                     </div>
                 </div>
             </div>
-            
-            <div style="text-align: center; margin-top: 3rem;" class="animate-on-scroll">
-                <p style="color: #666; font-size: 1rem; margin-bottom: 1rem;">🔒 Все партнеры проверены и имеют лицензии ЦБ РФ</p>
-                <p style="color: #666; font-size: 0.9rem;">Переход на сайты партнеров осуществляется в новой вкладке</p>
-            </div>
-        </div>
-    </section>
+        </section>
+    </main>
 
     <footer class="footer" id="contact">
         <div class="container">
@@ -661,9 +689,9 @@
                 </div>
                 <div class="footer-section">
                     <h3>Услуги</h3>
-                    <a href="#">ОСАГО</a>
-                    <a href="#">КАСКО</a>
-                    <a href="#">Ипотечное страхование</a>
+                    <a href="#calculator" onclick="switchInsuranceType('osago')">ОСАГО</a>
+                    <a href="#calculator" onclick="switchInsuranceType('kasko')">КАСКО</a>
+                    <a href="#calculator" onclick="switchInsuranceType('mortgage')">Ипотечное страхование</a>
                     <a href="#">Страхование имущества</a>
                 </div>
                 <div class="footer-section">
@@ -680,6 +708,74 @@
     </footer>
 
     <script>
+        // Insurance type URLs
+        const insuranceUrls = {
+            osago: 'https://widgets.inssmart.ru/contract/eosago?appId=3067e739-11bc-51d3-bdb3-aed23e20e2da&secret=ff8ef8b9-c909-5ed3-9b62-d57e432056b6',
+            kasko: 'https://widgets.inssmart.ru/contract/ekasko?appId=3067e739-11bc-51d3-bdb3-aed23e20e2da&secret=ff8ef8b9-c909-5ed3-9b62-d57e432056b6',
+            mortgage: 'https://widgets.inssmart.ru/contract/mortgage?appId=3067e739-11bc-51d3-bdb3-aed23e20e2da&secret=ff8ef8b9-c909-5ed3-9b62-d57e432056b6'
+        };
+
+        const insuranceTitles = {
+            osago: 'Калькулятор ОСАГО',
+            kasko: 'Калькулятор КАСКО',
+            mortgage: 'Калькулятор ипотечного страхования'
+        };
+
+        let currentInsuranceType = 'osago';
+
+        function switchInsuranceType(type) {
+            if (currentInsuranceType === type) return;
+            
+            currentInsuranceType = type;
+            
+            // Update tab buttons
+            document.querySelectorAll('.tab-btn').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            document.getElementById(type + '-tab').classList.add('active');
+            
+            // Show loading spinner
+            showSpinner();
+            
+            // Update iframe
+            const iframe = document.getElementById('insurance-calculator');
+            iframe.src = insuranceUrls[type];
+            iframe.title = insuranceTitles[type];
+        }
+
+        function showSpinner() {
+            document.getElementById('loading-spinner').style.display = 'block';
+            document.getElementById('insurance-calculator').style.display = 'none';
+        }
+
+        function hideSpinner() {
+            document.getElementById('loading-spinner').style.display = 'none';
+            document.getElementById('insurance-calculator').style.display = 'block';
+        }
+
+        function showError() {
+            const spinner = document.getElementById('loading-spinner');
+            spinner.innerHTML = `
+                <div style="text-align: center; padding: 2rem;">
+                    <div style="font-size: 3rem; margin-bottom: 1rem;">⚠️</div>
+                    <h3 style="color: #666; margin-bottom: 1rem;">Калькулятор временно недоступен</h3>
+                    <p style="color: #666; margin-bottom: 2rem;">
+                        Попробуйте обновить страницу или воспользуйтесь прямой ссылкой.
+                    </p>
+                    <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+                        <button onclick="location.reload()" 
+                                style="background: linear-gradient(135deg, #667eea, #764ba2); color: white; border: none; padding: 12px 24px; border-radius: 25px; cursor: pointer; font-weight: 600;">
+                            🔄 Обновить страницу
+                        </button>
+                        <a href="${insuranceUrls[currentInsuranceType]}" target="_blank"
+                           style="background: linear-gradient(135deg, #28a745, #20c997); color: white; text-decoration: none; padding: 12px 24px; border-radius: 25px; font-weight: 600;">
+                            🔗 Открыть в новом окне
+                        </a>
+                    </div>
+                </div>
+            `;
+        }
+
         // Smooth scrolling
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
@@ -722,147 +818,30 @@
             }
         });
 
-        // Inssmart Widget Management
-        let currentProduct = 'osago';
-        let widgetLoaded = false;
-
-        function loadInssmartWidget(product) {
-            const container = document.getElementById('inssmart-widget-container');
-            const spinner = document.getElementById('loading-spinner');
-            
-            // Show loading spinner
-            spinner.style.display = 'flex';
-            
-            // Clear any existing widget
-            const existingWidget = container.querySelector('#inssmart-b2c');
-            if (existingWidget) {
-                existingWidget.remove();
-            }
-            
-            // Remove existing script
-            const existingScript = document.querySelector('script[data-id="inssmart-b2c"]');
-            if (existingScript) {
-                existingScript.remove();
-            }
-            
-            // Create widget container div
-            const widgetDiv = document.createElement('div');
-            widgetDiv.id = 'inssmart-b2c';
-            container.appendChild(widgetDiv);
-            
-            // Create new script element with error handling
-            const script = document.createElement('script');
-            script.type = 'text/javascript';
-            script.src = 'https://widgets.inssmart.ru/widgets/b2c-frame.loader.js';
-            script.setAttribute('data-id', 'inssmart-b2c');
-            script.setAttribute('data-origin', 'https://widgets.inssmart.ru');
-            script.setAttribute('data-product', product === 'osago' ? '/osago' : '/mortgage');
-            script.setAttribute('data-token', 'cc3f4029-d8fa-5436-acfa-04d8d7924382');
-            script.setAttribute('data-secret', 'a959928a-ffdd-5358-adce-9d5f1de1432c');
-            
-            // Enhanced error handling
-            script.onload = function() {
-                console.log('Inssmart script loaded successfully');
-                setTimeout(() => {
-                    const widget = document.querySelector('#inssmart-b2c iframe, #inssmart-b2c [class*="widget"]');
-                    if (widget) {
-                        spinner.style.display = 'none';
-                        console.log('Widget rendered successfully');
-                    } else {
-                        // If widget didn't render after 5 seconds, show fallback
-                        setTimeout(() => {
-                            if (!document.querySelector('#inssmart-b2c iframe')) {
-                                showFallbackMessage(product);
-                            }
-                        }, 3000);
-                    }
-                }, 2000);
-            };
-            
-            script.onerror = function(error) {
-                console.error('Error loading Inssmart script:', error);
-                showFallbackMessage(product);
-            };
-            
-            // Add timeout fallback
-            setTimeout(() => {
-                if (spinner.style.display !== 'none') {
-                    console.warn('Widget loading timeout');
-                    showFallbackMessage(product);
-                }
-            }, 10000);
-            
-            // Append script to head
-            document.head.appendChild(script);
-        }
-
-        function showFallbackMessage(product) {
-            const container = document.getElementById('inssmart-widget-container');
-            const spinner = document.getElementById('loading-spinner');
-            
-            spinner.style.display = 'none';
-            
-            const fallbackHTML = `
-                <div style="text-align: center; padding: 3rem; background: #f8f9fa; border-radius: 15px; border: 2px dashed #dee2e6;">
-                    <div style="font-size: 3rem; margin-bottom: 1rem;">⚠️</div>
-                    <h3 style="color: #6c757d; margin-bottom: 1rem;">Виджет временно недоступен</h3>
-                    <p style="color: #6c757d; margin-bottom: 2rem;">
-                        ${product === 'osago' ? 'Калькулятор ОСАГО' : 'Калькулятор ипотечного страхования'} 
-                        загружается. Попробуйте обновить страницу или вернитесь позже.
-                    </p>
-                    <button onclick="loadInssmartWidget('${product}')" 
-                            style="background: linear-gradient(135deg, #667eea, #764ba2); color: white; border: none; padding: 12px 24px; border-radius: 25px; cursor: pointer; font-weight: 600;">
-                        Попробовать снова
-                    </button>
-                    <br><br>
-                    <a href="https://widgets.inssmart.ru" target="_blank" 
-                       style="color: #667eea; text-decoration: none; font-size: 0.9rem;">
-                        Открыть калькулятор в новом окне →
-                    </a>
-                </div>
-            `;
-            
-            container.innerHTML = fallbackHTML;
-        }
-
-        function switchInssmartProduct(product) {
-            if (currentProduct === product) return;
-            
-            currentProduct = product;
-            
-            // Update tab buttons
-            document.querySelectorAll('.tab-btn').forEach(btn => {
-                btn.classList.remove('active');
-                btn.style.background = 'transparent';
-                btn.style.color = '#666';
-            });
-            
-            const activeTab = document.getElementById(product + '-tab');
-            activeTab.classList.add('active');
-            activeTab.style.background = 'linear-gradient(135deg, #667eea, #764ba2)';
-            activeTab.style.color = 'white';
-            
-            // Load appropriate widget
-            loadInssmartWidget(product);
-        }
-
-        // Initialize widget on page load
-        document.addEventListener('DOMContentLoaded', function() {
-            loadInssmartWidget('osago');
-        });
-
-        // Calculator function
-        function calculateInsurance() {
-            // This function has been replaced by partner calculators
-            alert('Используйте калькуляторы наших партнеров выше для точного расчета стоимости!');
-        }
-
         // Parallax effect for background
         window.addEventListener('scroll', () => {
             const scrolled = window.pageYOffset;
             const bg = document.querySelector('.bg-animation');
             bg.style.transform = `translateY(${scrolled * 0.5}px)`;
         });
+
+        // Auto-hide spinner after timeout
+        setTimeout(() => {
+            const spinner = document.getElementById('loading-spinner');
+            if (spinner.style.display !== 'none') {
+                hideSpinner();
+            }
+        }, 5000);
+
+        // Initialize
+        document.addEventListener('DOMContentLoaded', function() {
+            // Small delay to let content load
+            setTimeout(() => {
+                hideSpinner();
+            }, 2000);
+        });
+
+        console.log('InsDuddy website with direct Inssmart integration loaded! 🚗💼');
     </script>
 </body>
 </html>
