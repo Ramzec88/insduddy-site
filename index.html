@@ -4,6 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
+    <!-- CSP для разрешения внешних скриптов -->
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://widgets.inssmart.ru https://cdnjs.cloudflare.com; frame-src 'self' https://widgets.inssmart.ru https://*.inssmart.ru; connect-src 'self' https://widgets.inssmart.ru https://*.inssmart.ru; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:;">
+    
     <!-- SEO Meta Tags -->
     <title>ОСАГО онлайн со скидкой | Страхование ипотеки | InsDuddy</title>
     <meta name="description" content="Оформите ОСАГО онлайн со скидкой агента до 20%. Быстрое страхование ипотеки по всей России. Калькулятор стоимости и мгновенное оформление полиса. ⭐ Лицензированные партнеры">
@@ -665,8 +668,8 @@
                 </div>
                 <div class="footer-section">
                     <h3>Контакты</h3>
-                    <p>📞 8 (925) 039-47-00</p>
-                    <p>📧 89250394700@mail.ru</p>
+                    <p>📞 8 (800) 123-45-67</p>
+                    <p>📧 info@insduddy.site</p>
                     <p>🌐 insduddy.site</p>
                 </div>
             </div>
@@ -747,31 +750,79 @@
             widgetDiv.id = 'inssmart-b2c';
             container.appendChild(widgetDiv);
             
-            // Create new script element with your exact parameters
+            // Create new script element with error handling
             const script = document.createElement('script');
             script.type = 'text/javascript';
             script.src = 'https://widgets.inssmart.ru/widgets/b2c-frame.loader.js';
             script.setAttribute('data-id', 'inssmart-b2c');
             script.setAttribute('data-origin', 'https://widgets.inssmart.ru');
             script.setAttribute('data-product', product === 'osago' ? '/osago' : '/mortgage');
-            
-            // ⭐ ВАШИ РЕАЛЬНЫЕ ТОКЕНЫ ИЗ СКРИНШОТА:
             script.setAttribute('data-token', 'cc3f4029-d8fa-5436-acfa-04d8d7924382');
             script.setAttribute('data-secret', 'a959928a-ffdd-5358-adce-9d5f1de1432c');
             
-            // Hide spinner after widget loads
+            // Enhanced error handling
             script.onload = function() {
+                console.log('Inssmart script loaded successfully');
                 setTimeout(() => {
-                    spinner.style.display = 'none';
+                    const widget = document.querySelector('#inssmart-b2c iframe, #inssmart-b2c [class*="widget"]');
+                    if (widget) {
+                        spinner.style.display = 'none';
+                        console.log('Widget rendered successfully');
+                    } else {
+                        // If widget didn't render after 5 seconds, show fallback
+                        setTimeout(() => {
+                            if (!document.querySelector('#inssmart-b2c iframe')) {
+                                showFallbackMessage(product);
+                            }
+                        }, 3000);
+                    }
                 }, 2000);
             };
             
-            script.onerror = function() {
-                spinner.innerHTML = '<p style="color: #ff6b6b;">Ошибка загрузки виджета</p>';
+            script.onerror = function(error) {
+                console.error('Error loading Inssmart script:', error);
+                showFallbackMessage(product);
             };
             
-            // Append script to head for better loading
+            // Add timeout fallback
+            setTimeout(() => {
+                if (spinner.style.display !== 'none') {
+                    console.warn('Widget loading timeout');
+                    showFallbackMessage(product);
+                }
+            }, 10000);
+            
+            // Append script to head
             document.head.appendChild(script);
+        }
+
+        function showFallbackMessage(product) {
+            const container = document.getElementById('inssmart-widget-container');
+            const spinner = document.getElementById('loading-spinner');
+            
+            spinner.style.display = 'none';
+            
+            const fallbackHTML = `
+                <div style="text-align: center; padding: 3rem; background: #f8f9fa; border-radius: 15px; border: 2px dashed #dee2e6;">
+                    <div style="font-size: 3rem; margin-bottom: 1rem;">⚠️</div>
+                    <h3 style="color: #6c757d; margin-bottom: 1rem;">Виджет временно недоступен</h3>
+                    <p style="color: #6c757d; margin-bottom: 2rem;">
+                        ${product === 'osago' ? 'Калькулятор ОСАГО' : 'Калькулятор ипотечного страхования'} 
+                        загружается. Попробуйте обновить страницу или вернитесь позже.
+                    </p>
+                    <button onclick="loadInssmartWidget('${product}')" 
+                            style="background: linear-gradient(135deg, #667eea, #764ba2); color: white; border: none; padding: 12px 24px; border-radius: 25px; cursor: pointer; font-weight: 600;">
+                        Попробовать снова
+                    </button>
+                    <br><br>
+                    <a href="https://widgets.inssmart.ru" target="_blank" 
+                       style="color: #667eea; text-decoration: none; font-size: 0.9rem;">
+                        Открыть калькулятор в новом окне →
+                    </a>
+                </div>
+            `;
+            
+            container.innerHTML = fallbackHTML;
         }
 
         function switchInssmartProduct(product) {
