@@ -1,0 +1,789 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- SEO Meta Tags -->
+    <title>ОСАГО онлайн со скидкой | Страхование ипотеки | InsDuddy</title>
+    <meta name="description" content="Оформите ОСАГО онлайн со скидкой агента до 20%. Быстрое страхование ипотеки по всей России. Калькулятор стоимости и мгновенное оформление полиса. ⭐ Лицензированные партнеры">
+    <meta name="keywords" content="ОСАГО онлайн, страхование ипотеки, калькулятор ОСАГО, оформить полис онлайн, скидка на страховку, страхование по России">
+    <meta name="author" content="InsDuddy">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://insduddy.site/">
+    <meta property="og:title" content="ОСАГО онлайн со скидкой | Страхование ипотеки | InsDuddy">
+    <meta property="og:description" content="Оформите ОСАГО онлайн со скидкой агента до 20%. Быстрое страхование ипотеки по всей России.">
+    <meta property="og:image" content="https://insduddy.site/og-image.jpg">
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://insduddy.site/">
+    <meta property="twitter:title" content="ОСАГО онлайн со скидкой | Страхование ипотеки | InsDuddy">
+    <meta property="twitter:description" content="Оформите ОСАГО онлайн со скидкой агента до 20%. Быстрое страхование ипотеки по всей России.">
+    <meta property="twitter:image" content="https://insduddy.site/og-image.jpg">
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://insduddy.site/">
+    
+    <!-- Favicons -->
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    
+    <!-- Preconnect for performance -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    
+    <!-- Schema.org JSON-LD -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "InsuranceAgency",
+      "name": "InsDuddy",
+      "description": "Онлайн сервис для оформления страхования ОСАГО и ипотеки со скидкой агента",
+      "url": "https://insduddy.site/",
+      "logo": "https://insduddy.site/logo.png",
+      "sameAs": [],
+      "address": {
+        "@type": "PostalAddress",
+        "addressCountry": "RU"
+      },
+      "areaServed": "RU",
+      "serviceType": "Insurance Services",
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Страховые услуги",
+        "itemListElement": [
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "ОСАГО онлайн",
+              "description": "Быстрое оформление полиса ОСАГО с мгновенной выдачей"
+            }
+          },
+          {
+            "@type": "Offer", 
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Страхование ипотеки",
+              "description": "Надежная защита недвижимости и ипотечного кредита"
+            }
+          }
+        ]
+      },
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "telephone": "+7-800-123-45-67",
+        "contactType": "customer service",
+        "availableLanguage": "Russian"
+      }
+    }
+    </script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            overflow-x: hidden;
+        }
+
+        /* Animated Background */
+        .bg-animation {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            z-index: -2;
+        }
+
+        .bg-animation::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="20" cy="20" r="2" fill="rgba(255,255,255,0.1)"><animate attributeName="opacity" values="0.1;0.3;0.1" dur="3s" repeatCount="indefinite"/></circle><circle cx="80" cy="40" r="1.5" fill="rgba(255,255,255,0.1)"><animate attributeName="opacity" values="0.1;0.4;0.1" dur="2s" repeatCount="indefinite"/></circle><circle cx="40" cy="70" r="1" fill="rgba(255,255,255,0.1)"><animate attributeName="opacity" values="0.1;0.2;0.1" dur="4s" repeatCount="indefinite"/></circle></svg>') repeat;
+            animation: float 20s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-20px) rotate(180deg); }
+        }
+
+        /* Header */
+        .header {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 1rem 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 20px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #333;
+            font-weight: 500;
+            transition: color 0.3s ease;
+            position: relative;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -5px;
+            left: 0;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            transition: width 0.3s ease;
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            position: relative;
+            padding-top: 80px;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            padding: 0 20px;
+            animation: fadeInUp 1s ease-out;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            font-weight: 700;
+            color: white;
+            margin-bottom: 1.5rem;
+            line-height: 1.2;
+            animation: fadeInUp 1s ease-out 0.2s both;
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+            color: rgba(255, 255, 255, 0.9);
+            margin-bottom: 2.5rem;
+            animation: fadeInUp 1s ease-out 0.4s both;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            animation: fadeInUp 1s ease-out 0.6s both;
+        }
+
+        .btn {
+            padding: 15px 30px;
+            border: none;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn-primary {
+            background: linear-gradient(45deg, #ff6b6b, #ffa500);
+            color: white;
+            box-shadow: 0 10px 30px rgba(255, 107, 107, 0.3);
+        }
+
+        .btn-secondary {
+            background: rgba(255, 255, 255, 0.2);
+            color: white;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            backdrop-filter: blur(10px);
+        }
+
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.2);
+        }
+
+        .btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+            transition: left 0.5s;
+        }
+
+        .btn:hover::before {
+            left: 100%;
+        }
+
+        /* Features Section */
+        .features {
+            padding: 100px 0;
+            background: white;
+            position: relative;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 3rem;
+            color: #333;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .feature-card {
+            background: white;
+            padding: 2.5rem;
+            border-radius: 20px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .feature-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+        }
+
+        .feature-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 60px rgba(0,0,0,0.15);
+        }
+
+        .feature-icon {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1.5rem;
+            font-size: 1.5rem;
+        }
+
+        .feature-card h3 {
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: #333;
+        }
+
+        .feature-card p {
+            color: #666;
+            line-height: 1.6;
+        }
+
+        /* Calculator Section */
+        .calculator {
+            padding: 100px 0;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+        }
+
+        .calculator-card {
+            background: white;
+            padding: 3rem;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.1);
+            max-width: 600px;
+            margin: 0 auto;
+            animation: slideInUp 0.8s ease-out;
+        }
+
+        @keyframes slideInUp {
+            from {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+            color: #333;
+        }
+
+        .form-group input,
+        .form-group select {
+            width: 100%;
+            padding: 12px 16px;
+            border: 2px solid #e1e5e9;
+            border-radius: 10px;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus {
+            outline: none;
+            border-color: #667eea;
+            box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+        }
+
+        /* Footer */
+        .footer {
+            background: #2c3e50;
+            color: white;
+            padding: 50px 0 20px;
+            text-align: center;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-section h3 {
+            margin-bottom: 1rem;
+            font-size: 1.2rem;
+        }
+
+        .footer-section p,
+        .footer-section a {
+            color: rgba(255, 255, 255, 0.8);
+            text-decoration: none;
+            margin-bottom: 0.5rem;
+            display: block;
+        }
+
+        .footer-section a:hover {
+            color: white;
+        }
+
+        /* Tab Buttons */
+        .tab-btn:hover {
+            background: linear-gradient(135deg, #667eea, #764ba2) !important;
+            color: white !important;
+        }
+
+        .tab-btn.active {
+            background: linear-gradient(135deg, #667eea, #764ba2) !important;
+            color: white !important;
+        }
+
+        /* Loading Spinner Animation */
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        /* Partner Cards Hover Effects */
+        .partner-card:hover {
+            transform: translateY(-10px) scale(1.02);
+            box-shadow: 0 25px 50px rgba(0,0,0,0.2);
+        }
+
+        .partner-card:hover div[style*="background: rgba(255, 255, 255, 0.2)"] {
+            background: rgba(255, 255, 255, 0.3) !important;
+            transform: scale(1.05);
+        }
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .hero p {
+                font-size: 1.1rem;
+            }
+            
+            .cta-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .nav-links {
+                display: none;
+            }
+            
+            .section-title {
+                font-size: 2rem;
+            }
+        }
+
+        /* Scroll animations */
+        .animate-on-scroll {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease;
+        }
+
+        .animate-on-scroll.animated {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body>
+    <div class="bg-animation"></div>
+    
+    <header class="header" role="banner">
+        <div class="container">
+            <nav class="nav" role="navigation" aria-label="Основная навигация">
+                <div class="logo">
+                    <a href="/" aria-label="InsDuddy - Главная страница">InsDuddy</a>
+                </div>
+                <ul class="nav-links">
+                    <li><a href="#home" aria-label="Перейти к главной секции">Главная</a></li>
+                    <li><a href="#services" aria-label="Перейти к услугам">Услуги</a></li>
+                    <li><a href="#calculator" aria-label="Перейти к калькулятору">Калькулятор</a></li>
+                    <li><a href="#contact" aria-label="Перейти к контактам">Контакты</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main role="main">
+        <section class="hero" id="home" aria-labelledby="hero-title">
+            <div class="hero-content">
+                <h1 id="hero-title">Оформите ОСАГО онлайн со скидкой до 20%</h1>
+                <p>Быстро рассчитывайте и оформляйте полис ОСАГО, выбирайте надежное страхование для ипотеки по всей России. Скидка агента гарантирована! Работаем только с лицензированными партнерами.</p>
+                <div class="cta-buttons">
+                    <a href="#calculator" class="btn btn-primary" aria-label="Перейти к расчету стоимости страховки">Рассчитать стоимость ОСАГО</a>
+                    <a href="#services" class="btn btn-secondary" aria-label="Узнать подробнее о наших услугах">Все виды страхования</a>
+                </div>
+            </div>
+        </section>
+
+        <section class="features" id="services" aria-labelledby="services-title">
+            <div class="container">
+                <h2 id="services-title">Почему выбирают InsDuddy для страхования</h2>
+                <div class="features-grid" role="list">
+                    <article class="feature-card animate-on-scroll" role="listitem">
+                        <div class="feature-icon" aria-hidden="true">🚗</div>
+                        <h3>ОСАГО онлайн за 5 минут</h3>
+                        <p>Быстрое оформление полиса ОСАГО с мгновенной выдачей электронного документа. Все данные защищены и сохраняются в системе РСА.</p>
+                    </article>
+                    <article class="feature-card animate-on-scroll" role="listitem">
+                        <div class="feature-icon" aria-hidden="true">🏠</div>
+                        <h3>Страхование ипотеки и недвижимости</h3>
+                        <p>Надежная защита вашей недвижимости и ипотечного кредита. Выгодные условия от ведущих страховых компаний России.</p>
+                    </article>
+                    <article class="feature-card animate-on-scroll" role="listitem">
+                        <div class="feature-icon" aria-hidden="true">💰</div>
+                        <h3>Агентская скидка до 20%</h3>
+                        <p>Эксклюзивные скидки от наших партнеров. Экономьте до 20% на страховых полисах при онлайн-оформлении через наш сервис.</p>
+                    </article>
+                    <article class="feature-card animate-on-scroll" role="listitem">
+                        <div class="feature-icon" aria-hidden="true">🌍</div>
+                        <h3>Оформление по всей России</h3>
+                        <p>Возможность оформления страховки из любой точки России. Работаем 24/7 без выходных и праздников во всех регионах РФ.</p>
+                    </article>
+                    <article class="feature-card animate-on-scroll" role="listitem">
+                        <div class="feature-icon" aria-hidden="true">⚡</div>
+                        <h3>Мгновенное оформление</h3>
+                        <p>Среднее время оформления полиса составляет всего 5 минут. Никаких очередей и лишней бумажной волокиты. Сразу получаете e-полис.</p>
+                    </article>
+                    <article class="feature-card animate-on-scroll" role="listitem">
+                        <div class="feature-icon" aria-hidden="true">🛡️</div>
+                        <h3>Только лицензированные партнеры</h3>
+                        <p>Работаем только с проверенными страховыми компаниями. Все полисы имеют юридическую силу и признаются ГИБДД и банками.</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+    <!-- Partner Calculators Section -->
+    <section class="partners" id="calculator" style="padding: 100px 0; background: white;">
+        <div class="container">
+            <h2 class="section-title animate-on-scroll">Рассчитать стоимость страховки</h2>
+            <p style="text-align: center; font-size: 1.2rem; color: #666; margin-bottom: 3rem;" class="animate-on-scroll">
+                Воспользуйтесь калькуляторами наших проверенных партнеров для точного расчета стоимости
+            </p>
+            
+            <div class="partners-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 2rem; margin-top: 3rem;">
+                
+                <!-- Partner 1: Инссмарт -->
+                <div class="partner-card animate-on-scroll" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); padding: 2.5rem; border-radius: 20px; text-align: center; color: white; position: relative; overflow: hidden; transition: all 0.3s ease; cursor: pointer;" onclick="window.open('#', '_blank')">
+                    <div style="position: absolute; top: -50%; left: -50%; width: 200%; height: 200%; background: url('data:image/svg+xml,<svg xmlns=&quot;http://www.w3.org/2000/svg&quot; viewBox=&quot;0 0 100 100&quot;><circle cx=&quot;25&quot; cy=&quot;25&quot; r=&quot;2&quot; fill=&quot;rgba(255,255,255,0.1)&quot;/><circle cx=&quot;75&quot; cy=&quot;75&quot; r=&quot;1.5&quot; fill=&quot;rgba(255,255,255,0.1)&quot;/></svg>') repeat; animation: float 15s linear infinite;"></div>
+                    <div style="position: relative; z-index: 2;">
+                        <div style="width: 80px; height: 80px; background: rgba(255, 255, 255, 0.2); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1.5rem; font-size: 2rem;">🏢</div>
+                        <h3 style="font-size: 1.4rem; font-weight: 700; margin-bottom: 1rem;">Партнер Инссмарт</h3>
+                        <p style="margin-bottom: 1.5rem; opacity: 0.9; line-height: 1.5;">Профессиональный расчет ОСАГО и КАСКО с максимальными скидками</p>
+                        <div style="background: rgba(255, 255, 255, 0.2); padding: 12px 24px; border-radius: 30px; display: inline-block; font-weight: 600; backdrop-filter: blur(10px);">
+                            Рассчитать стоимость →
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Partner 2: Universal Calculator -->
+                <div class="partner-card animate-on-scroll" style="background: linear-gradient(135deg, #ff6b6b 0%, #ffa500 100%); padding: 2.5rem; border-radius: 20px; text-align: center; color: white; position: relative; overflow: hidden; transition: all 0.3s ease; cursor: pointer;" onclick="window.open('#', '_blank')">
+                    <div style="position: absolute; top: -50%; left: -50%; width: 200%; height: 200%; background: url('data:image/svg+xml,<svg xmlns=&quot;http://www.w3.org/2000/svg&quot; viewBox=&quot;0 0 100 100&quot;><circle cx=&quot;30&quot; cy=&quot;30&quot; r=&quot;2&quot; fill=&quot;rgba(255,255,255,0.1)&quot;/><circle cx=&quot;70&quot; cy=&quot;70&quot; r=&quot;1.5&quot; fill=&quot;rgba(255,255,255,0.1)&quot;/></svg>') repeat; animation: float 20s linear infinite reverse;"></div>
+                    <div style="position: relative; z-index: 2;">
+                        <div style="width: 80px; height: 80px; background: rgba(255, 255, 255, 0.2); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1.5rem; font-size: 2rem;">🧮</div>
+                        <h3 style="font-size: 1.4rem; font-weight: 700; margin-bottom: 1rem;">Универсальный калькулятор</h3>
+                        <p style="margin-bottom: 1.5rem; opacity: 0.9; line-height: 1.5;">Сравнение предложений от ведущих страховых компаний России</p>
+                        <div style="background: rgba(255, 255, 255, 0.2); padding: 12px 24px; border-radius: 30px; display: inline-block; font-weight: 600; backdrop-filter: blur(10px);">
+                            Рассчитать стоимость →
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Partner 3: Express Calculator -->
+                <div class="partner-card animate-on-scroll" style="background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%); padding: 2.5rem; border-radius: 20px; text-align: center; color: white; position: relative; overflow: hidden; transition: all 0.3s ease; cursor: pointer;" onclick="window.open('#', '_blank')">
+                    <div style="position: absolute; top: -50%; left: -50%; width: 200%; height: 200%; background: url('data:image/svg+xml,<svg xmlns=&quot;http://www.w3.org/2000/svg&quot; viewBox=&quot;0 0 100 100&quot;><circle cx=&quot;20&quot; cy=&quot;80&quot; r=&quot;2&quot; fill=&quot;rgba(255,255,255,0.1)&quot;/><circle cx=&quot;80&quot; cy=&quot;20&quot; r=&quot;1.5&quot; fill=&quot;rgba(255,255,255,0.1)&quot;/></svg>') repeat; animation: float 25s linear infinite;"></div>
+                    <div style="position: relative; z-index: 2;">
+                        <div style="width: 80px; height: 80px; background: rgba(255, 255, 255, 0.2); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1.5rem; font-size: 2rem;">⚡</div>
+                        <h3 style="font-size: 1.4rem; font-weight: 700; margin-bottom: 1rem;">Экспресс-расчет</h3>
+                        <p style="margin-bottom: 1.5rem; opacity: 0.9; line-height: 1.5;">Быстрый расчет за 30 секунд для всех видов страхования</p>
+                        <div style="background: rgba(255, 255, 255, 0.2); padding: 12px 24px; border-radius: 30px; display: inline-block; font-weight: 600; backdrop-filter: blur(10px);">
+                            Рассчитать стоимость →
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div style="text-align: center; margin-top: 3rem;" class="animate-on-scroll">
+                <p style="color: #666; font-size: 1rem; margin-bottom: 1rem;">🔒 Все партнеры проверены и имеют лицензии ЦБ РФ</p>
+                <p style="color: #666; font-size: 0.9rem;">Переход на сайты партнеров осуществляется в новой вкладке</p>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer" id="contact">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>InsDuddy</h3>
+                    <p>Надежное страхование онлайн для всех регионов России</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Услуги</h3>
+                    <a href="#">ОСАГО</a>
+                    <a href="#">КАСКО</a>
+                    <a href="#">Ипотечное страхование</a>
+                    <a href="#">Страхование имущества</a>
+                </div>
+                <div class="footer-section">
+                    <h3>Контакты</h3>
+                    <p>📞 8 (800) 123-45-67</p>
+                    <p>📧 info@insduddy.site</p>
+                    <p>🌐 insduddy.site</p>
+                </div>
+            </div>
+            <div style="border-top: 1px solid rgba(255,255,255,0.1); padding-top: 20px; margin-top: 20px;">
+                <p>&copy; 2025 InsDuddy. Все права защищены.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Scroll animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animated');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.animate-on-scroll').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Header background on scroll
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('.header');
+            if (window.scrollY > 100) {
+                header.style.background = 'rgba(255, 255, 255, 0.98)';
+            } else {
+                header.style.background = 'rgba(255, 255, 255, 0.95)';
+            }
+        });
+
+        // Inssmart Widget Management
+        let currentProduct = 'osago';
+        let widgetLoaded = false;
+
+        function loadInssmartWidget(product) {
+            const container = document.getElementById('inssmart-widget-container');
+            const spinner = document.getElementById('loading-spinner');
+            
+            // Show loading spinner
+            spinner.style.display = 'flex';
+            
+            // Clear any existing widget
+            const existingWidget = container.querySelector('#inssmart-b2c');
+            if (existingWidget) {
+                existingWidget.remove();
+            }
+            
+            // Remove existing script
+            const existingScript = document.querySelector('script[data-id="inssmart-b2c"]');
+            if (existingScript) {
+                existingScript.remove();
+            }
+            
+            // Create new script element
+            const script = document.createElement('script');
+            script.type = 'text/javascript';
+            script.src = 'https://widgets.inssmart.ru/widgets/b2c-frame.loader.js';
+            script.setAttribute('data-id', 'inssmart-b2c');
+            script.setAttribute('data-origin', 'https://widgets.inssmart.ru');
+            script.setAttribute('data-product', product === 'osago' ? '/osago' : '/mortgage');
+            script.setAttribute('data-token', 'ce7030c4-0d18-553d-b57d-79846bc39b7b');
+            script.setAttribute('data-secret', '2ab06316-fa50-50cf-80b9-754dd15c0246');
+            
+            // Hide spinner after widget loads
+            script.onload = function() {
+                setTimeout(() => {
+                    spinner.style.display = 'none';
+                }, 2000);
+            };
+            
+            // Append script to container
+            container.appendChild(script);
+        }
+
+        function switchInssmartProduct(product) {
+            if (currentProduct === product) return;
+            
+            currentProduct = product;
+            
+            // Update tab buttons
+            document.querySelectorAll('.tab-btn').forEach(btn => {
+                btn.classList.remove('active');
+                btn.style.background = 'transparent';
+                btn.style.color = '#666';
+            });
+            
+            const activeTab = document.getElementById(product + '-tab');
+            activeTab.classList.add('active');
+            activeTab.style.background = 'linear-gradient(135deg, #667eea, #764ba2)';
+            activeTab.style.color = 'white';
+            
+            // Load appropriate widget
+            loadInssmartWidget(product);
+        }
+
+        // Initialize widget on page load
+        document.addEventListener('DOMContentLoaded', function() {
+            loadInssmartWidget('osago');
+        });
+
+        // Calculator function
+        function calculateInsurance() {
+            // This function has been replaced by partner calculators
+            alert('Используйте калькуляторы наших партнеров выше для точного расчета стоимости!');
+        }
+
+        // Parallax effect for background
+        window.addEventListener('scroll', () => {
+            const scrolled = window.pageYOffset;
+            const bg = document.querySelector('.bg-animation');
+            bg.style.transform = `translateY(${scrolled * 0.5}px)`;
+        });
+    </script>
+</body>
+</html>
