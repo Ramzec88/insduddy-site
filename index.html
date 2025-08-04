@@ -4,9 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
-    <!-- CSP для разрешения внешних скриптов -->
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://widgets.inssmart.ru https://cdnjs.cloudflare.com; frame-src 'self' https://widgets.inssmart.ru https://*.inssmart.ru; connect-src 'self' https://widgets.inssmart.ru https://*.inssmart.ru; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:;">
-    
     <!-- SEO Meta Tags -->
     <title>ОСАГО онлайн со скидкой | Страхование ипотеки | InsDuddy</title>
     <meta name="description" content="Оформите ОСАГО онлайн со скидкой агента до 20%. Быстрое страхование ипотеки по всей России. Калькулятор стоимости и мгновенное оформление полиса. ⭐ Лицензированные партнеры">
@@ -21,70 +18,9 @@
     <meta property="og:description" content="Оформите ОСАГО онлайн со скидкой агента до 20%. Быстрое страхование ипотеки по всей России.">
     <meta property="og:image" content="https://insduddy.site/og-image.jpg">
     
-    <!-- Twitter -->
-    <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="https://insduddy.site/">
-    <meta property="twitter:title" content="ОСАГО онлайн со скидкой | Страхование ипотеки | InsDuddy">
-    <meta property="twitter:description" content="Оформите ОСАГО онлайн со скидкой агента до 20%. Быстрое страхование ипотеки по всей России.">
-    <meta property="twitter:image" content="https://insduddy.site/og-image.jpg">
-    
-    <!-- Canonical URL -->
-    <link rel="canonical" href="https://insduddy.site/">
-    
     <!-- Favicons -->
     <link rel="icon" type="image/x-icon" href="/favicon.ico">
-    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
     
-    <!-- Preconnect for performance -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    
-    <!-- Schema.org JSON-LD -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "InsuranceAgency",
-      "name": "InsDuddy",
-      "description": "Онлайн сервис для оформления страхования ОСАГО и ипотеки со скидкой агента",
-      "url": "https://insduddy.site/",
-      "logo": "https://insduddy.site/logo.png",
-      "sameAs": [],
-      "address": {
-        "@type": "PostalAddress",
-        "addressCountry": "RU"
-      },
-      "areaServed": "RU",
-      "serviceType": "Insurance Services",
-      "hasOfferCatalog": {
-        "@type": "OfferCatalog",
-        "name": "Страховые услуги",
-        "itemListElement": [
-          {
-            "@type": "Offer",
-            "itemOffered": {
-              "@type": "Service",
-              "name": "ОСАГО онлайн",
-              "description": "Быстрое оформление полиса ОСАГО с мгновенной выдачей"
-            }
-          },
-          {
-            "@type": "Offer", 
-            "itemOffered": {
-              "@type": "Service",
-              "name": "Страхование ипотеки",
-              "description": "Надежная защита недвижимости и ипотечного кредита"
-            }
-          }
-        ]
-      },
-      "contactPoint": {
-        "@type": "ContactPoint",
-        "telephone": "+7-800-123-45-67",
-        "contactType": "customer service",
-        "availableLanguage": "Russian"
-      }
-    }
-    </script>
     <style>
         * {
             margin: 0;
@@ -158,6 +94,7 @@
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
+            text-decoration: none;
         }
 
         .nav-links {
@@ -365,53 +302,78 @@
             background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
         }
 
-        .calculator-card {
-            background: white;
-            padding: 3rem;
-            border-radius: 20px;
-            box-shadow: 0 20px 60px rgba(0,0,0,0.1);
-            max-width: 600px;
+        .calculator-container {
+            max-width: 1000px;
             margin: 0 auto;
-            animation: slideInUp 0.8s ease-out;
         }
 
-        @keyframes slideInUp {
-            from {
-                opacity: 0;
-                transform: translateY(50px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
+        .calculator-tabs {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-bottom: 3rem;
+            flex-wrap: wrap;
         }
 
-        .form-group {
-            margin-bottom: 1.5rem;
-        }
-
-        .form-group label {
-            display: block;
-            margin-bottom: 0.5rem;
+        .tab-btn {
+            padding: 15px 30px;
+            border: 2px solid #667eea;
+            background: transparent;
+            color: #667eea;
+            border-radius: 50px;
+            cursor: pointer;
             font-weight: 600;
-            color: #333;
-        }
-
-        .form-group input,
-        .form-group select {
-            width: 100%;
-            padding: 12px 16px;
-            border: 2px solid #e1e5e9;
-            border-radius: 10px;
             font-size: 1rem;
             transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
         }
 
-        .form-group input:focus,
-        .form-group select:focus {
-            outline: none;
-            border-color: #667eea;
-            box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+        .tab-btn:hover,
+        .tab-btn.active {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(102, 126, 234, 0.3);
+        }
+
+        .calculator-widget {
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.1);
+            padding: 2rem;
+            min-height: 600px;
+            position: relative;
+        }
+
+        .widget-iframe {
+            width: 100%;
+            height: 700px;
+            border: none;
+            border-radius: 15px;
+        }
+
+        .loading-spinner {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 400px;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .spinner {
+            width: 50px;
+            height: 50px;
+            border: 4px solid #f3f3f3;
+            border-top: 4px solid #667eea;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
         }
 
         /* Footer */
@@ -446,50 +408,6 @@
             color: white;
         }
 
-        /* Inssmart Widget Customization */
-        #inssmart-b2c {
-            border-radius: 15px !important;
-            overflow: hidden !important;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.1) !important;
-        }
-
-        /* Override widget colors to match site theme */
-        #inssmart-b2c iframe {
-            border-radius: 15px !important;
-        }
-
-        /* Custom CSS for widget styling */
-        .inssmart-section {
-            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
-        }
-
-        /* Tab Buttons */
-        .tab-btn:hover {
-            background: linear-gradient(135deg, #667eea, #764ba2) !important;
-            color: white !important;
-        }
-
-        .tab-btn.active {
-            background: linear-gradient(135deg, #667eea, #764ba2) !important;
-            color: white !important;
-        }
-
-        /* Loading Spinner Animation */
-        @keyframes spin {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
-        }
-
-        /* Partner Cards Hover Effects */
-        .partner-card:hover {
-            transform: translateY(-10px) scale(1.02);
-            box-shadow: 0 25px 50px rgba(0,0,0,0.2);
-        }
-
-        .partner-card:hover div[style*="background: rgba(255, 255, 255, 0.2)"] {
-            background: rgba(255, 255, 255, 0.3) !important;
-            transform: scale(1.05);
-        }
         @media (max-width: 768px) {
             .hero h1 {
                 font-size: 2.5rem;
@@ -511,6 +429,16 @@
             .section-title {
                 font-size: 2rem;
             }
+
+            .calculator-tabs {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .tab-btn {
+                width: 100%;
+                max-width: 300px;
+            }
         }
 
         /* Scroll animations */
@@ -524,11 +452,61 @@
             opacity: 1;
             transform: translateY(0);
         }
+
+        /* Notice Banner */
+        .notice-banner {
+            background: linear-gradient(135deg, #28a745, #20c997);
+            color: white;
+            padding: 1rem;
+            text-align: center;
+            position: fixed;
+            top: 80px;
+            left: 0;
+            right: 0;
+            z-index: 999;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            transform: translateY(-100%);
+            transition: transform 0.3s ease;
+        }
+
+        .notice-banner.show {
+            transform: translateY(0);
+        }
+
+        .notice-banner .close-btn {
+            position: absolute;
+            right: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            background: none;
+            border: none;
+            color: white;
+            font-size: 1.5rem;
+            cursor: pointer;
+            padding: 0;
+            width: 30px;
+            height: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            transition: background 0.3s ease;
+        }
+
+        .notice-banner .close-btn:hover {
+            background: rgba(255,255,255,0.2);
+        }
     </style>
 </head>
 <body>
     <div class="bg-animation"></div>
     
+    <!-- Notice Banner -->
+    <div class="notice-banner" id="noticeBanner">
+        <strong>🎉 Специальное предложение:</strong> Скидка до 20% на ОСАГО при онлайн оформлении!
+        <button class="close-btn" onclick="closeNotice()" aria-label="Закрыть уведомление">&times;</button>
+    </div>
+
     <header class="header" role="banner">
         <div class="container">
             <nav class="nav" role="navigation" aria-label="Основная навигация">
@@ -548,11 +526,11 @@
     <main role="main">
         <section class="hero" id="home" aria-labelledby="hero-title">
             <div class="hero-content">
-                <h1 id="hero-title">Оформите ОСАГО онлайн со скидкой до 20%</h1>
-                <p>Быстро рассчитывайте и оформляйте полис ОСАГО, выбирайте надежное страхование для ипотеки по всей России. Скидка агента гарантирована! Работаем только с лицензированными партнерами.</p>
+                <h1 id="hero-title">Оформите ОСАГО и КАСКО онлайн со скидкой до 20%</h1>
+                <p>Быстро рассчитывайте и оформляйте полис ОСАГО и КАСКО, выбирайте надежное страхование для ипотеки по всей России. Скидка агента гарантирована! Работаем только с лицензированными партнерами.</p>
                 <div class="cta-buttons">
-                    <a href="#calculator" class="btn btn-primary" aria-label="Перейти к расчету стоимости страховки">Рассчитать стоимость ОСАГО</a>
-                    <a href="#services" class="btn btn-secondary" aria-label="Узнать подробнее о наших услугах">Все виды страхования</a>
+                    <a href="#calculator" class="btn btn-primary" aria-label="Перейти к расчету стоимости страховки">Рассчитать ОСАГО</a>
+                    <a href="#calculator" class="btn btn-secondary" aria-label="Рассчитать КАСКО">Рассчитать КАСКО</a>
                 </div>
             </div>
         </section>
@@ -565,6 +543,11 @@
                         <div class="feature-icon" aria-hidden="true">🚗</div>
                         <h3>ОСАГО онлайн за 5 минут</h3>
                         <p>Быстрое оформление полиса ОСАГО с мгновенной выдачей электронного документа. Все данные защищены и сохраняются в системе РСА.</p>
+                    </article>
+                    <article class="feature-card animate-on-scroll" role="listitem">
+                        <div class="feature-icon" aria-hidden="true">🛡️</div>
+                        <h3>КАСКО с максимальной защитой</h3>
+                        <p>Комплексная защита вашего автомобиля от угона, ДТП, стихийных бедствий и других рисков. Выгодные тарифы от ведущих страховщиков.</p>
                     </article>
                     <article class="feature-card animate-on-scroll" role="listitem">
                         <div class="feature-icon" aria-hidden="true">🏠</div>
@@ -586,71 +569,58 @@
                         <h3>Мгновенное оформление</h3>
                         <p>Среднее время оформления полиса составляет всего 5 минут. Никаких очередей и лишней бумажной волокиты. Сразу получаете e-полис.</p>
                     </article>
-                    <article class="feature-card animate-on-scroll" role="listitem">
-                        <div class="feature-icon" aria-hidden="true">🛡️</div>
-                        <h3>Только лицензированные партнеры</h3>
-                        <p>Работаем только с проверенными страховыми компаниями. Все полисы имеют юридическую силу и признаются ГИБДД и банками.</p>
-                    </article>
                 </div>
             </div>
         </section>
 
-    <!-- Partner Calculators Section -->
-    <section class="partners" id="calculator" style="padding: 100px 0; background: white;">
-        <div class="container">
-            <h2 class="section-title animate-on-scroll">Рассчитать стоимость страховки</h2>
-            <p style="text-align: center; font-size: 1.2rem; color: #666; margin-bottom: 3rem;" class="animate-on-scroll">
-                Воспользуйтесь калькуляторами наших проверенных партнеров для точного расчета стоимости
-            </p>
-            
-            <div class="partners-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 2rem; margin-top: 3rem;">
-                
-                <!-- Partner 1: Инссмарт -->
-                <div class="partner-card animate-on-scroll" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); padding: 2.5rem; border-radius: 20px; text-align: center; color: white; position: relative; overflow: hidden; transition: all 0.3s ease; cursor: pointer;" onclick="window.open('#', '_blank')">
-                    <div style="position: absolute; top: -50%; left: -50%; width: 200%; height: 200%; background: url('data:image/svg+xml,<svg xmlns=&quot;http://www.w3.org/2000/svg&quot; viewBox=&quot;0 0 100 100&quot;><circle cx=&quot;25&quot; cy=&quot;25&quot; r=&quot;2&quot; fill=&quot;rgba(255,255,255,0.1)&quot;/><circle cx=&quot;75&quot; cy=&quot;75&quot; r=&quot;1.5&quot; fill=&quot;rgba(255,255,255,0.1)&quot;/></svg>') repeat; animation: float 15s linear infinite;"></div>
-                    <div style="position: relative; z-index: 2;">
-                        <div style="width: 80px; height: 80px; background: rgba(255, 255, 255, 0.2); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1.5rem; font-size: 2rem;">🏢</div>
-                        <h3 style="font-size: 1.4rem; font-weight: 700; margin-bottom: 1rem;">Партнер Инссмарт</h3>
-                        <p style="margin-bottom: 1.5rem; opacity: 0.9; line-height: 1.5;">Профессиональный расчет ОСАГО и КАСКО с максимальными скидками</p>
-                        <div style="background: rgba(255, 255, 255, 0.2); padding: 12px 24px; border-radius: 30px; display: inline-block; font-weight: 600; backdrop-filter: blur(10px);">
-                            Рассчитать стоимость →
-                        </div>
+        <section class="calculator" id="calculator" aria-labelledby="calculator-title">
+            <div class="container">
+                <div class="calculator-container">
+                    <h2 id="calculator-title" class="section-title animate-on-scroll">Рассчитать стоимость страховки</h2>
+                    <p style="text-align: center; font-size: 1.2rem; color: #666; margin-bottom: 3rem;" class="animate-on-scroll">
+                        Воспользуйтесь калькуляторами для точного расчета стоимости ОСАГО и КАСКО
+                    </p>
+                    
+                    <div class="calculator-tabs animate-on-scroll">
+                        <button class="tab-btn active" id="osago-tab" onclick="switchProduct('osago')">
+                            🚗 ОСАГО
+                        </button>
+                        <button class="tab-btn" id="kasko-tab" onclick="switchProduct('kasko')">
+                            🛡️ КАСКО
+                        </button>
+                        <button class="tab-btn" id="mortgage-tab" onclick="switchProduct('mortgage')">
+                            🏠 Ипотека
+                        </button>
                     </div>
-                </div>
 
-                <!-- Partner 2: Universal Calculator -->
-                <div class="partner-card animate-on-scroll" style="background: linear-gradient(135deg, #ff6b6b 0%, #ffa500 100%); padding: 2.5rem; border-radius: 20px; text-align: center; color: white; position: relative; overflow: hidden; transition: all 0.3s ease; cursor: pointer;" onclick="window.open('#', '_blank')">
-                    <div style="position: absolute; top: -50%; left: -50%; width: 200%; height: 200%; background: url('data:image/svg+xml,<svg xmlns=&quot;http://www.w3.org/2000/svg&quot; viewBox=&quot;0 0 100 100&quot;><circle cx=&quot;30&quot; cy=&quot;30&quot; r=&quot;2&quot; fill=&quot;rgba(255,255,255,0.1)&quot;/><circle cx=&quot;70&quot; cy=&quot;70&quot; r=&quot;1.5&quot; fill=&quot;rgba(255,255,255,0.1)&quot;/></svg>') repeat; animation: float 20s linear infinite reverse;"></div>
-                    <div style="position: relative; z-index: 2;">
-                        <div style="width: 80px; height: 80px; background: rgba(255, 255, 255, 0.2); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1.5rem; font-size: 2rem;">🧮</div>
-                        <h3 style="font-size: 1.4rem; font-weight: 700; margin-bottom: 1rem;">Универсальный калькулятор</h3>
-                        <p style="margin-bottom: 1.5rem; opacity: 0.9; line-height: 1.5;">Сравнение предложений от ведущих страховых компаний России</p>
-                        <div style="background: rgba(255, 255, 255, 0.2); padding: 12px 24px; border-radius: 30px; display: inline-block; font-weight: 600; backdrop-filter: blur(10px);">
-                            Рассчитать стоимость →
+                    <div class="calculator-widget animate-on-scroll">
+                        <div class="loading-spinner" id="loadingSpinner">
+                            <div class="spinner"></div>
+                            <p>Загружаем калькулятор...</p>
                         </div>
+                        <iframe 
+                            id="calculatorFrame" 
+                            class="widget-iframe" 
+                            src="https://widgets.inssmart.ru/contract/eosago?appId=3067e739-11bc-51d3-bdb3-aed23e20e2da&secret=ff8ef8b9-c909-5ed3-9b62-d57e432056b6"
+                            title="Калькулятор ОСАГО"
+                            style="display: none;"
+                            onload="hideSpinner()"
+                            onerror="showError()">
+                        </iframe>
                     </div>
-                </div>
 
-                <!-- Partner 3: Express Calculator -->
-                <div class="partner-card animate-on-scroll" style="background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%); padding: 2.5rem; border-radius: 20px; text-align: center; color: white; position: relative; overflow: hidden; transition: all 0.3s ease; cursor: pointer;" onclick="window.open('#', '_blank')">
-                    <div style="position: absolute; top: -50%; left: -50%; width: 200%; height: 200%; background: url('data:image/svg+xml,<svg xmlns=&quot;http://www.w3.org/2000/svg&quot; viewBox=&quot;0 0 100 100&quot;><circle cx=&quot;20&quot; cy=&quot;80&quot; r=&quot;2&quot; fill=&quot;rgba(255,255,255,0.1)&quot;/><circle cx=&quot;80&quot; cy=&quot;20&quot; r=&quot;1.5&quot; fill=&quot;rgba(255,255,255,0.1)&quot;/></svg>') repeat; animation: float 25s linear infinite;"></div>
-                    <div style="position: relative; z-index: 2;">
-                        <div style="width: 80px; height: 80px; background: rgba(255, 255, 255, 0.2); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1.5rem; font-size: 2rem;">⚡</div>
-                        <h3 style="font-size: 1.4rem; font-weight: 700; margin-bottom: 1rem;">Экспресс-расчет</h3>
-                        <p style="margin-bottom: 1.5rem; opacity: 0.9; line-height: 1.5;">Быстрый расчет за 30 секунд для всех видов страхования</p>
-                        <div style="background: rgba(255, 255, 255, 0.2); padding: 12px 24px; border-radius: 30px; display: inline-block; font-weight: 600; backdrop-filter: blur(10px);">
-                            Рассчитать стоимость →
-                        </div>
+                    <div style="text-align: center; margin-top: 2rem;" class="animate-on-scroll">
+                        <p style="color: #666; font-size: 1rem; margin-bottom: 1rem;">
+                            🔒 Все данные защищены SSL-шифрованием
+                        </p>
+                        <p style="color: #666; font-size: 0.9rem;">
+                            Партнер имеет лицензии ЦБ РФ и входит в РСА
+                        </p>
                     </div>
                 </div>
             </div>
-            
-            <div style="text-align: center; margin-top: 3rem;" class="animate-on-scroll">
-                <p style="color: #666; font-size: 1rem; margin-bottom: 1rem;">🔒 Все партнеры проверены и имеют лицензии ЦБ РФ</p>
-                <p style="color: #666; font-size: 0.9rem;">Переход на сайты партнеров осуществляется в новой вкладке</p>
-            </div>
-        </div>
-    </section>
+        </section>
+    </main>
 
     <footer class="footer" id="contact">
         <div class="container">
@@ -658,12 +628,15 @@
                 <div class="footer-section">
                     <h3>InsDuddy</h3>
                     <p>Надежное страхование онлайн для всех регионов России</p>
+                    <p style="margin-top: 1rem; font-size: 0.9rem; opacity: 0.8;">
+                        Официальный партнер ведущих страховых компаний
+                    </p>
                 </div>
                 <div class="footer-section">
                     <h3>Услуги</h3>
-                    <a href="#">ОСАГО</a>
-                    <a href="#">КАСКО</a>
-                    <a href="#">Ипотечное страхование</a>
+                    <a href="#calculator" onclick="switchProduct('osago')">ОСАГО</a>
+                    <a href="#calculator" onclick="switchProduct('kasko')">КАСКО</a>
+                    <a href="#calculator" onclick="switchProduct('mortgage')">Ипотечное страхование</a>
                     <a href="#">Страхование имущества</a>
                 </div>
                 <div class="footer-section">
@@ -671,161 +644,38 @@
                     <p>📞 8 (800) 123-45-67</p>
                     <p>📧 info@insduddy.site</p>
                     <p>🌐 insduddy.site</p>
+                    <p style="margin-top: 1rem; font-size: 0.9rem;">
+                        🕒 Работаем 24/7
+                    </p>
                 </div>
             </div>
             <div style="border-top: 1px solid rgba(255,255,255,0.1); padding-top: 20px; margin-top: 20px;">
                 <p>&copy; 2025 InsDuddy. Все права защищены.</p>
+                <p style="font-size: 0.8rem; opacity: 0.7; margin-top: 0.5rem;">
+                    Информация на сайте не является офертой
+                </p>
             </div>
         </div>
     </footer>
 
     <script>
-        // Smooth scrolling
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
-                }
-            });
-        });
+        let currentProduct = 'osago';
 
-        // Scroll animations
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
+        // URLs for different products
+        const productUrls = {
+            osago: 'https://widgets.inssmart.ru/contract/eosago?appId=3067e739-11bc-51d3-bdb3-aed23e20e2da&secret=ff8ef8b9-c909-5ed3-9b62-d57e432056b6',
+            kasko: 'https://widgets.inssmart.ru/contract/ekasko?appId=3067e739-11bc-51d3-bdb3-aed23e20e2da&secret=ff8ef8b9-c909-5ed3-9b62-d57e432056b6',
+            mortgage: 'https://widgets.inssmart.ru/contract/mortgage?appId=3067e739-11bc-51d3-bdb3-aed23e20e2da&secret=ff8ef8b9-c909-5ed3-9b62-d57e432056b6'
         };
 
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('animated');
-                }
-            });
-        }, observerOptions);
+        // Product names for iframe title
+        const productNames = {
+            osago: 'Калькулятор ОСАГО',
+            kasko: 'Калькулятор КАСКО', 
+            mortgage: 'Калькулятор ипотечного страхования'
+        };
 
-        document.querySelectorAll('.animate-on-scroll').forEach(el => {
-            observer.observe(el);
-        });
-
-        // Header background on scroll
-        window.addEventListener('scroll', () => {
-            const header = document.querySelector('.header');
-            if (window.scrollY > 100) {
-                header.style.background = 'rgba(255, 255, 255, 0.98)';
-            } else {
-                header.style.background = 'rgba(255, 255, 255, 0.95)';
-            }
-        });
-
-        // Inssmart Widget Management
-        let currentProduct = 'osago';
-        let widgetLoaded = false;
-
-        function loadInssmartWidget(product) {
-            const container = document.getElementById('inssmart-widget-container');
-            const spinner = document.getElementById('loading-spinner');
-            
-            // Show loading spinner
-            spinner.style.display = 'flex';
-            
-            // Clear any existing widget
-            const existingWidget = container.querySelector('#inssmart-b2c');
-            if (existingWidget) {
-                existingWidget.remove();
-            }
-            
-            // Remove existing script
-            const existingScript = document.querySelector('script[data-id="inssmart-b2c"]');
-            if (existingScript) {
-                existingScript.remove();
-            }
-            
-            // Create widget container div
-            const widgetDiv = document.createElement('div');
-            widgetDiv.id = 'inssmart-b2c';
-            container.appendChild(widgetDiv);
-            
-            // Create new script element with error handling
-            const script = document.createElement('script');
-            script.type = 'text/javascript';
-            script.src = 'https://widgets.inssmart.ru/widgets/b2c-frame.loader.js';
-            script.setAttribute('data-id', 'inssmart-b2c');
-            script.setAttribute('data-origin', 'https://widgets.inssmart.ru');
-            script.setAttribute('data-product', product === 'osago' ? '/osago' : '/mortgage');
-            script.setAttribute('data-token', 'cc3f4029-d8fa-5436-acfa-04d8d7924382');
-            script.setAttribute('data-secret', 'a959928a-ffdd-5358-adce-9d5f1de1432c');
-            
-            // Enhanced error handling
-            script.onload = function() {
-                console.log('Inssmart script loaded successfully');
-                setTimeout(() => {
-                    const widget = document.querySelector('#inssmart-b2c iframe, #inssmart-b2c [class*="widget"]');
-                    if (widget) {
-                        spinner.style.display = 'none';
-                        console.log('Widget rendered successfully');
-                    } else {
-                        // If widget didn't render after 5 seconds, show fallback
-                        setTimeout(() => {
-                            if (!document.querySelector('#inssmart-b2c iframe')) {
-                                showFallbackMessage(product);
-                            }
-                        }, 3000);
-                    }
-                }, 2000);
-            };
-            
-            script.onerror = function(error) {
-                console.error('Error loading Inssmart script:', error);
-                showFallbackMessage(product);
-            };
-            
-            // Add timeout fallback
-            setTimeout(() => {
-                if (spinner.style.display !== 'none') {
-                    console.warn('Widget loading timeout');
-                    showFallbackMessage(product);
-                }
-            }, 10000);
-            
-            // Append script to head
-            document.head.appendChild(script);
-        }
-
-        function showFallbackMessage(product) {
-            const container = document.getElementById('inssmart-widget-container');
-            const spinner = document.getElementById('loading-spinner');
-            
-            spinner.style.display = 'none';
-            
-            const fallbackHTML = `
-                <div style="text-align: center; padding: 3rem; background: #f8f9fa; border-radius: 15px; border: 2px dashed #dee2e6;">
-                    <div style="font-size: 3rem; margin-bottom: 1rem;">⚠️</div>
-                    <h3 style="color: #6c757d; margin-bottom: 1rem;">Виджет временно недоступен</h3>
-                    <p style="color: #6c757d; margin-bottom: 2rem;">
-                        ${product === 'osago' ? 'Калькулятор ОСАГО' : 'Калькулятор ипотечного страхования'} 
-                        загружается. Попробуйте обновить страницу или вернитесь позже.
-                    </p>
-                    <button onclick="loadInssmartWidget('${product}')" 
-                            style="background: linear-gradient(135deg, #667eea, #764ba2); color: white; border: none; padding: 12px 24px; border-radius: 25px; cursor: pointer; font-weight: 600;">
-                        Попробовать снова
-                    </button>
-                    <br><br>
-                    <a href="https://widgets.inssmart.ru" target="_blank" 
-                       style="color: #667eea; text-decoration: none; font-size: 0.9rem;">
-                        Открыть калькулятор в новом окне →
-                    </a>
-                </div>
-            `;
-            
-            container.innerHTML = fallbackHTML;
-        }
-
-        function switchInssmartProduct(product) {
+        function switchProduct(product) {
             if (currentProduct === product) return;
             
             currentProduct = product;
@@ -833,36 +683,56 @@
             // Update tab buttons
             document.querySelectorAll('.tab-btn').forEach(btn => {
                 btn.classList.remove('active');
-                btn.style.background = 'transparent';
-                btn.style.color = '#666';
             });
             
-            const activeTab = document.getElementById(product + '-tab');
-            activeTab.classList.add('active');
-            activeTab.style.background = 'linear-gradient(135deg, #667eea, #764ba2)';
-            activeTab.style.color = 'white';
+            document.getElementById(product + '-tab').classList.add('active');
             
-            // Load appropriate widget
-            loadInssmartWidget(product);
+            // Show loading spinner
+            showSpinner();
+            
+            // Update iframe
+            const iframe = document.getElementById('calculatorFrame');
+            iframe.src = productUrls[product];
+            iframe.title = productNames[product];
         }
 
-        // Initialize widget on page load
-        document.addEventListener('DOMContentLoaded', function() {
-            loadInssmartWidget('osago');
-        });
-
-        // Calculator function
-        function calculateInsurance() {
-            // This function has been replaced by partner calculators
-            alert('Используйте калькуляторы наших партнеров выше для точного расчета стоимости!');
+        function showSpinner() {
+            document.getElementById('loadingSpinner').style.display = 'flex';
+            document.getElementById('calculatorFrame').style.display = 'none';
         }
 
-        // Parallax effect for background
-        window.addEventListener('scroll', () => {
-            const scrolled = window.pageYOffset;
-            const bg = document.querySelector('.bg-animation');
-            bg.style.transform = `translateY(${scrolled * 0.5}px)`;
+        function hideSpinner() {
+            document.getElementById('loadingSpinner').style.display = 'none';
+            document.getElementById('calculatorFrame').style.display = 'block';
+        }
+
+        function showError() {
+            const spinner = document.getElementById('loadingSpinner');
+            spinner.innerHTML = `
+                <div style="text-align: center; padding: 2rem;">
+                    <div style="font-size: 3rem; margin-bottom: 1rem;">⚠️</div>
+                    <h3 style="color: #666; margin-bottom: 1rem;">Временные технические работы</h3>
+                    <p style="color: #666; margin-bottom: 2rem;">
+                        Калькулятор временно недоступен. Попробуйте обновить страницу.
+                    </p>
+                    <button onclick="location.reload()" 
+                            style="background: linear-gradient(135deg, #667eea, #764ba2); color: white; border: none; padding: 12px 24px; border-radius: 25px; cursor: pointer; font-weight: 600;">
+                        Обновить страницу
+                    </button>
+                </div>
+            `;
+        }
+
+        // Notice banner functionality
+        function closeNotice() {
+            document.getElementById('noticeBanner').classList.remove('show');
+        }
+
+        // Show notice banner after page load
+        window.addEventListener('load', () => {
+            setTimeout(() => {
+                document.getElementById('noticeBanner').classList.add('show');
+            }, 2000);
         });
-    </script>
-</body>
-</html>
+
+        //
