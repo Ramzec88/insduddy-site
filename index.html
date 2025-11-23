@@ -5,577 +5,1519 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <!-- SEO Meta Tags -->
-    <title>ОСАГО онлайн со скидкой | Страхование ипотеки | InsDuddy</title>
-    <meta name="description" content="Оформите ОСАГО онлайн со скидкой до 20%. Быстрое и надежное страхование ипотеки, КАСКО и имущества. Мгновенный расчет стоимости и оформление полиса. Сравнивайте предложения от ведущих страховых компаний России на InsDuddy.">
-    <meta name="keywords" content="ОСАГО онлайн, страхование ипотеки, калькулятор ОСАГО, оформить полис онлайн, скидка на страховку, страхование по России">
-    <meta name="author" content="InsDuddy">
-    <meta name="robots" content="index, follow">
+    <title>Страхование ипотеки онлайн | Защита недвижимости | МояСтраховка</title>
+    <meta name="description" content="Профессиональное ипотечное страхование онлайн. Быстрое оформление, выгодные условия, надёжная защита вашей недвижимости. ОСАГО, КАСКО и другие виды страхования.">
+    <meta name="keywords" content="страхование ипотеки, ипотечное страхование онлайн, страхование недвижимости, ОСАГО, КАСКО">
     
-    <!-- Open Graph / Facebook -->
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://insduddy.site/">
-    <meta property="og:title" content="ОСАГО онлайн со скидкой | Страхование ипотеки | InsDuddy">
-    <meta property="og:description" content="Оформите ОСАГО онлайн со скидкой агента до 20%. Быстрое страхование ипотеки по всей России.">
-    <meta property="og:image" content="https://insduddy.site/og-image.jpg">
-    
-    <!-- Twitter -->
-    <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="https://insduddy.site/">
-    <meta property="twitter:title" content="ОСАГО онлайн со скидкой | Страхование ипотеки | InsDuddy">
-    <meta property="twitter:description" content="Оформите ОСАГО онлайн со скидкой агента до 20%. Быстрое страхование ипотеки по всей России.">
-    <meta property="twitter:image" content="https://insduddy.site/og-image.jpg">
-    
-    <!-- Canonical URL -->
-    <link rel="canonical" href="https://insduddy.site/">
-    
-    <!-- Favicons -->
-    <link rel="icon" type="image/x-icon" href="/favicon.ico">
-    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-    
-    <!-- Preconnect for performance -->
+    <!-- Preconnect -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    
-    <!-- Schema.org JSON-LD -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "InsuranceAgency",
-      "name": "InsDuddy",
-      "description": "Онлайн сервис для оформления страхования ОСАГО и ипотеки со скидкой агента",
-      "url": "https://insduddy.site/",
-      "logo": "https://insduddy.site/logo.png",
-      "sameAs": [],
-      "address": {
-        "@type": "PostalAddress",
-        "addressCountry": "RU"
-      },
-      "areaServed": "RU",
-      "serviceType": "Insurance Services",
-      "hasOfferCatalog": {
-        "@type": "OfferCatalog",
-        "name": "Страховые услуги",
-        "itemListElement": [
-          {
-            "@type": "Offer",
-            "itemOffered": {
-              "@type": "Service",
-              "name": "ОСАГО онлайн",
-              "description": "Быстрое оформление полиса ОСАГО с мгновенной выдачей"
-            }
-          },
-          {
-            "@type": "Offer", 
-            "itemOffered": {
-              "@type": "Service",
-              "name": "Страхование ипотеки",
-              "description": "Надежная защита недвижимости и ипотечного кредита"
-            }
-          }
-        ]
-      },
-      "contactPoint": {
-        "@type": "ContactPoint",
-        "telephone": "+7-800-123-45-67",
-        "contactType": "customer service",
-        "availableLanguage": "Russian"
-      }
-    }
-    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Phosphor Icons -->
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+
     <style>
+        :root {
+            /* Color System - Financial Trust */
+            --primary-900: #0A2540;
+            --primary-800: #0D3A5F;
+            --primary-700: #114E7E;
+            --primary-600: #1565A0;
+            --primary-500: #1976D2;
+            
+            --accent-500: #F59E0B;
+            --accent-400: #FBBF24;
+            --accent-300: #FCD34D;
+            
+            --neutral-50: #FAFAFA;
+            --neutral-100: #F5F5F5;
+            --neutral-200: #EEEEEE;
+            --neutral-300: #E0E0E0;
+            --neutral-700: #616161;
+            --neutral-800: #424242;
+            --neutral-900: #212121;
+            
+            --success: #10B981;
+            --warning: #F59E0B;
+            
+            /* Spacing System */
+            --space-xs: 0.5rem;
+            --space-sm: 0.75rem;
+            --space-md: 1rem;
+            --space-lg: 1.5rem;
+            --space-xl: 2rem;
+            --space-2xl: 3rem;
+            --space-3xl: 4rem;
+            --space-4xl: 6rem;
+            
+            /* Typography */
+            --font-heading: 'Manrope', -apple-system, BlinkMacSystemFont, sans-serif;
+            --font-body: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Segoe UI', sans-serif;
+            
+            /* Shadows - цветные тени для премиального вида */
+            --shadow-sm: 0 1px 2px 0 rgba(10, 37, 64, 0.05);
+            --shadow-md: 0 4px 6px -1px rgba(10, 37, 64, 0.08), 0 2px 4px -1px rgba(10, 37, 64, 0.05);
+            --shadow-lg: 0 10px 15px -3px rgba(10, 37, 64, 0.1), 0 4px 6px -2px rgba(10, 37, 64, 0.05);
+            --shadow-xl: 0 20px 25px -5px rgba(10, 37, 64, 0.1), 0 10px 10px -5px rgba(10, 37, 64, 0.04);
+            --shadow-2xl: 0 25px 50px -12px rgba(10, 37, 64, 0.2);
+            
+            /* Border Radius */
+            --radius-sm: 0.375rem;
+            --radius-md: 0.5rem;
+            --radius-lg: 0.75rem;
+            --radius-xl: 1rem;
+            --radius-2xl: 1.5rem;
+        }
+        
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
-
-        body {
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-            line-height: 1.6;
-            color: #333;
-            overflow-x: hidden;
+        
+        html {
+            scroll-behavior: smooth;
         }
-
-        /* Animated Background */
-        .bg-animation {
+        
+        body {
+            font-family: var(--font-body);
+            line-height: 1.6;
+            color: var(--neutral-800);
+            background: var(--neutral-50);
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+        
+        /* Architectural Background Pattern */
+        .page-background {
             position: fixed;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            z-index: -2;
+            z-index: -1;
+            opacity: 0.03;
+            background-image: 
+                linear-gradient(90deg, var(--primary-900) 1px, transparent 1px),
+                linear-gradient(0deg, var(--primary-900) 1px, transparent 1px);
+            background-size: 60px 60px;
+            animation: gridFloat 60s linear infinite;
         }
-
-        .bg-animation::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="20" cy="20" r="2" fill="rgba(255,255,255,0.1)"><animate attributeName="opacity" values="0.1;0.3;0.1" dur="3s" repeatCount="indefinite"/></circle><circle cx="80" cy="40" r="1.5" fill="rgba(255,255,255,0.1)"><animate attributeName="opacity" values="0.1;0.4;0.1" dur="2s" repeatCount="indefinite"/></circle><circle cx="40" cy="70" r="1" fill="rgba(255,255,255,0.1)"><animate attributeName="opacity" values="0.1;0.2;0.1" dur="4s" repeatCount="indefinite"/></circle></svg>') repeat;
-            animation: float 20s ease-in-out infinite;
+        
+        @keyframes gridFloat {
+            0% { transform: translate(0, 0); }
+            100% { transform: translate(60px, 60px); }
         }
-
-        @keyframes float {
-            0%, 100% { transform: translateY(0px) rotate(0deg); }
-            50% { transform: translateY(-20px) rotate(180deg); }
-        }
-
+        
         /* Header */
         .header {
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(10px);
-            padding: 1rem 0;
             position: fixed;
-            width: 100%;
             top: 0;
+            left: 0;
+            right: 0;
             z-index: 1000;
-            box-shadow: 0 2px 20px rgba(0,0,0,0.1);
-            transition: all 0.3s ease;
+            background: rgba(250, 250, 250, 0.85);
+            backdrop-filter: blur(20px) saturate(180%);
+            border-bottom: 1px solid var(--neutral-200);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         }
-
-        .container {
-            max-width: 1200px;
+        
+        .header.scrolled {
+            background: rgba(250, 250, 250, 0.95);
+            box-shadow: var(--shadow-md);
+        }
+        
+        .header-container {
+            max-width: 1400px;
             margin: 0 auto;
-            padding: 0 20px;
-        }
-
-        .nav {
+            padding: var(--space-lg) var(--space-xl);
             display: flex;
             justify-content: space-between;
             align-items: center;
         }
-
+        
         .logo {
-            font-size: 1.8rem;
-            font-weight: 700;
-            background: linear-gradient(135deg, #667eea, #764ba2);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
+            font-family: var(--font-heading);
+            font-size: 1.75rem;
+            font-weight: 800;
+            color: var(--primary-900);
+            letter-spacing: -0.02em;
+            display: flex;
+            align-items: center;
+            gap: var(--space-sm);
         }
-
-        .nav-links {
+        
+        .logo-accent {
+            color: var(--accent-500);
+        }
+        
+        .nav-menu {
             display: flex;
             list-style: none;
-            gap: 2rem;
+            gap: var(--space-2xl);
+            align-items: center;
         }
-
-        .nav-links a {
+        
+        .mobile-menu-toggle {
+            display: none;
+            flex-direction: column;
+            gap: 6px;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 0.5rem;
+        }
+        
+        .mobile-menu-toggle span {
+            width: 24px;
+            height: 2px;
+            background: var(--primary-900);
+            transition: all 0.3s ease;
+            border-radius: 2px;
+        }
+        
+        .mobile-menu-toggle.active span:nth-child(1) {
+            transform: rotate(45deg) translate(8px, 8px);
+        }
+        
+        .mobile-menu-toggle.active span:nth-child(2) {
+            opacity: 0;
+        }
+        
+        .mobile-menu-toggle.active span:nth-child(3) {
+            transform: rotate(-45deg) translate(6px, -6px);
+        }
+        
+        .nav-link {
+            font-family: var(--font-heading);
+            font-size: 0.9375rem;
+            font-weight: 600;
+            color: var(--neutral-700);
             text-decoration: none;
-            color: #333;
-            font-weight: 500;
-            transition: color 0.3s ease;
             position: relative;
+            transition: color 0.2s ease;
+            letter-spacing: -0.01em;
         }
-
-        .nav-links a::after {
+        
+        .nav-link::after {
             content: '';
             position: absolute;
+            bottom: -4px;
+            left: 0;
             width: 0;
             height: 2px;
-            bottom: -5px;
-            left: 0;
-            background: linear-gradient(135deg, #667eea, #764ba2);
-            transition: width 0.3s ease;
+            background: var(--accent-500);
+            transition: width 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         }
-
-        .nav-links a:hover::after {
+        
+        .nav-link:hover {
+            color: var(--primary-900);
+        }
+        
+        .nav-link:hover::after {
             width: 100%;
         }
+        
+        .nav-link.primary {
+            background: var(--accent-500);
+            color: white;
+            padding: var(--space-sm) var(--space-lg);
+            border-radius: var(--radius-lg);
+            box-shadow: 0 8px 16px -4px rgba(245, 158, 11, 0.35);
+            transition: all 0.2s ease;
+        }
 
+        .nav-link.primary:hover {
+            background: #E8940A;
+            transform: translateY(-1px);
+            box-shadow: 0 12px 24px -4px rgba(245, 158, 11, 0.45);
+            color: white;
+        }
+        
+        .nav-link.primary::after {
+            display: none;
+        }
+        
         /* Hero Section */
         .hero {
-            min-height: 100vh;
+            margin-top: 84px;
+            position: relative;
+            background: linear-gradient(165deg, var(--primary-900) 0%, var(--primary-700) 100%);
+            color: white;
+            overflow: hidden;
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -20%;
+            width: 800px;
+            height: 800px;
+            background: radial-gradient(circle, rgba(245, 158, 11, 0.15) 0%, transparent 70%);
+            animation: heroGlow 8s ease-in-out infinite;
+        }
+        
+        @keyframes heroGlow {
+            0%, 100% { transform: translate(0, 0) scale(1); opacity: 0.15; }
+            50% { transform: translate(-30px, 30px) scale(1.1); opacity: 0.25; }
+        }
+        
+        .hero-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: var(--space-2xl) var(--space-xl);
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: var(--space-2xl);
+            align-items: start;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .hero-content h1 {
+            font-family: var(--font-heading);
+            font-size: 3.25rem;
+            font-weight: 800;
+            line-height: 1.1;
+            margin-bottom: var(--space-lg);
+            letter-spacing: -0.03em;
+        }
+        
+        .hero-accent {
+            color: var(--accent-400);
+            position: relative;
+            display: inline-block;
+        }
+        
+        .hero-accent::after {
+            content: '';
+            position: absolute;
+            bottom: 8px;
+            left: 0;
+            width: 100%;
+            height: 12px;
+            background: rgba(245, 158, 11, 0.3);
+            z-index: -1;
+        }
+        
+        .hero-subtitle {
+            font-size: 1.25rem;
+            line-height: 1.6;
+            margin-bottom: var(--space-2xl);
+            color: rgba(255, 255, 255, 0.85);
+            max-width: 540px;
+        }
+        
+        .hero-stats {
+            display: flex;
+            gap: var(--space-2xl);
+            margin-bottom: var(--space-2xl);
+        }
+        
+        .stat-item {
+            flex: 1;
+        }
+        
+        .stat-value {
+            font-family: var(--font-heading);
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: var(--accent-400);
+            line-height: 1;
+            white-space: nowrap;
+            margin-bottom: var(--space-xs);
+        }
+        
+        .stat-label {
+            font-size: 0.9375rem;
+            color: rgba(255, 255, 255, 0.9);
+            line-height: 1.4;
+        }
+        
+        .hero-cta {
+            display: flex;
+            gap: var(--space-md);
+            flex-wrap: wrap;
+        }
+        
+        .btn {
+            font-family: var(--font-heading);
+            font-size: 1rem;
+            font-weight: 700;
+            padding: 1rem 2rem;
+            border-radius: var(--radius-lg);
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: var(--space-sm);
+            transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+            border: none;
+            cursor: pointer;
+            letter-spacing: -0.01em;
+        }
+        
+        .btn-primary {
+            background: var(--accent-500);
+            color: var(--primary-900);
+            box-shadow: 0 10px 20px -5px rgba(245, 158, 11, 0.4);
+        }
+
+        .btn-primary:hover {
+            background: #E8940A;
+            transform: translateY(-1px);
+            box-shadow: 0 14px 28px -5px rgba(245, 158, 11, 0.5);
+        }
+        
+        .btn-secondary {
+            background: transparent;
+            color: white;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+
+        .btn-secondary:hover {
+            background: rgba(255, 255, 255, 0.1);
+            border-color: rgba(255, 255, 255, 0.5);
+        }
+        
+        /* Hero Visual - Image with Trust Badges */
+        .hero-visual {
+            position: relative;
+            height: 500px;
             display: flex;
             align-items: center;
             justify-content: center;
-            text-align: center;
+        }
+
+        .hero-image-container {
             position: relative;
-            padding-top: 80px;
-        }
-
-        .hero-content {
-            max-width: 800px;
-            padding: 0 20px;
-            animation: fadeInUp 1s ease-out;
-        }
-
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        .hero h1 {
-            font-size: 3.5rem;
-            font-weight: 700;
-            color: white;
-            margin-bottom: 1.5rem;
-            line-height: 1.2;
-            animation: fadeInUp 1s ease-out 0.2s both;
-        }
-
-        .hero p {
-            font-size: 1.3rem;
-            color: rgba(255, 255, 255, 0.9);
-            margin-bottom: 2.5rem;
-            animation: fadeInUp 1s ease-out 0.4s both;
-        }
-
-        .cta-buttons {
-            display: flex;
-            gap: 1rem;
-            justify-content: center;
-            flex-wrap: wrap;
-            animation: fadeInUp 1s ease-out 0.6s both;
-        }
-
-        .btn {
-            padding: 15px 30px;
-            border: none;
-            border-radius: 50px;
-            font-size: 1.1rem;
-            font-weight: 600;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            text-decoration: none;
-            display: inline-block;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .btn-primary {
-            background: linear-gradient(45deg, #ff6b6b, #ffa500);
-            color: white;
-            box-shadow: 0 10px 30px rgba(255, 107, 107, 0.3);
-        }
-
-        .btn-secondary {
-            background: rgba(255, 255, 255, 0.2);
-            color: white;
-            border: 2px solid rgba(255, 255, 255, 0.3);
-            backdrop-filter: blur(10px);
-        }
-
-        .btn:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 15px 35px rgba(0,0,0,0.2);
-        }
-
-        .btn::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
             width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
-            transition: left 0.5s;
+            max-width: 480px;
         }
 
-        .btn:hover::before {
-            left: 100%;
+        .hero-image {
+            width: 100%;
+            height: auto;
+            border-radius: var(--radius-2xl);
+            box-shadow: var(--shadow-2xl);
+            object-fit: cover;
+        }
+
+        /* Floating trust badges */
+        .trust-floating {
+            position: absolute;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(12px);
+            border-radius: var(--radius-xl);
+            padding: var(--space-md) var(--space-lg);
+            box-shadow: var(--shadow-lg);
+            display: flex;
+            align-items: center;
+            gap: var(--space-sm);
+            animation: floatBadge 4s ease-in-out infinite;
+        }
+
+        @keyframes floatBadge {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-8px); }
+        }
+
+        .trust-floating-1 {
+            top: 20px;
+            right: -20px;
+            animation-delay: 0s;
+        }
+
+        .trust-floating-2 {
+            bottom: 40px;
+            left: -30px;
+            animation-delay: 1.5s;
+        }
+
+        .trust-floating-3 {
+            bottom: 30px;
+            right: 40px;
+            animation-delay: 3s;
+        }
+
+        .trust-floating .ph {
+            font-size: 1.5rem;
+            color: var(--accent-500);
+        }
+
+        .trust-floating-content {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .trust-floating-value {
+            font-family: var(--font-heading);
+            font-size: 1.125rem;
+            font-weight: 800;
+            color: var(--primary-900);
+            line-height: 1.2;
+        }
+
+        .trust-floating-label {
+            font-size: 0.75rem;
+            color: var(--neutral-600);
+            font-weight: 500;
         }
 
         /* Features Section */
-        .features {
-            padding: 100px 0;
-            background: white;
-            position: relative;
+        .section {
+            padding: var(--space-4xl) var(--space-xl);
         }
-
-        .section-title {
+        
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+        
+        .section-header {
             text-align: center;
-            font-size: 2.5rem;
+            margin-bottom: var(--space-3xl);
+        }
+        
+        .section-label {
+            font-family: var(--font-heading);
+            font-size: 0.875rem;
             font-weight: 700;
-            margin-bottom: 3rem;
-            color: #333;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: var(--accent-500);
+            margin-bottom: var(--space-md);
         }
-
-        .features-grid {
+        
+        .section-title {
+            font-family: var(--font-heading);
+            font-size: 3rem;
+            font-weight: 800;
+            color: var(--primary-900);
+            line-height: 1.2;
+            margin-bottom: var(--space-md);
+            letter-spacing: -0.02em;
+        }
+        
+        .section-subtitle {
+            font-size: 1.25rem;
+            color: var(--neutral-700);
+            max-width: 65ch;
+            margin: 0 auto;
+            line-height: 1.6;
+        }
+        
+        /* Информационный баннер */
+        .partners-info-banner {
+            position: relative;
+            background: linear-gradient(135deg, #FFF7ED 0%, #FFEDD5 100%);
+            border: 2px solid var(--accent-400);
+            border-radius: var(--radius-xl);
+            padding: var(--space-xl);
+            max-width: 800px;
+            margin: var(--space-xl) auto 0;
+            display: flex;
+            gap: var(--space-lg);
+            align-items: flex-start;
+            box-shadow: 0 4px 12px rgba(245, 158, 11, 0.15);
+        }
+        
+        .info-icon {
+            font-size: 2rem;
+            flex-shrink: 0;
+            line-height: 1;
+        }
+        
+        .info-content {
+            flex: 1;
+            color: var(--neutral-800);
+            font-size: 0.9375rem;
+            line-height: 1.6;
+        }
+        
+        .info-content strong {
+            color: var(--primary-900);
+            font-weight: 700;
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+        
+        /* Products Grid */
+        .products-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            margin-top: 3rem;
+            grid-template-columns: repeat(2, 1fr);
+            gap: var(--space-xl);
         }
-
-        .feature-card {
+        
+        .product-card {
             background: white;
-            padding: 2.5rem;
-            border-radius: 20px;
-            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
-            transition: all 0.3s ease;
+            border-radius: var(--radius-2xl);
+            padding: var(--space-2xl);
+            box-shadow: var(--shadow-md);
+            border: 1px solid var(--neutral-200);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
             position: relative;
             overflow: hidden;
         }
 
-        .feature-card::before {
+        /* Бейдж в правом верхнем углу карточки */
+        .product-badge-corner {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: var(--accent-500);
+            color: var(--primary-900);
+            font-family: var(--font-heading);
+            font-size: 0.75rem;
+            font-weight: 800;
+            padding: 0.4rem 0.8rem;
+            border-radius: var(--radius-md);
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            box-shadow: 0 4px 12px rgba(245, 158, 11, 0.35);
+            z-index: 2;
+        }
+
+        .product-card.featured .product-badge-corner {
+            background: var(--accent-400);
+        }
+        
+        .product-card::before {
             content: '';
             position: absolute;
             top: 0;
             left: 0;
             width: 100%;
             height: 4px;
-            background: linear-gradient(135deg, #667eea, #764ba2);
+            background: linear-gradient(90deg, var(--accent-500), var(--accent-400));
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
         }
-
-        .feature-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 20px 60px rgba(0,0,0,0.15);
+        
+        .product-card:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-xl);
         }
-
-        .feature-icon {
-            width: 60px;
-            height: 60px;
-            background: linear-gradient(135deg, #667eea, #764ba2);
-            border-radius: 15px;
+        
+        .product-card:hover::before {
+            transform: scaleX(1);
+        }
+        
+        .product-card.featured {
+            grid-column: 1 / -1;
+            background: linear-gradient(135deg, var(--primary-900), var(--primary-700));
+            color: white;
+            border: none;
+        }
+        
+        .product-card.featured::before {
+            background: linear-gradient(90deg, var(--accent-500), var(--accent-400));
+            height: 6px;
+            transform: scaleX(1);
+        }
+        
+        .product-card.featured .product-title {
+            color: white;
+        }
+        
+        .product-card.featured .product-description {
+            color: rgba(255, 255, 255, 0.85);
+            max-width: none;
+        }
+        
+        .product-card.featured .feature-item {
+            color: rgba(255, 255, 255, 0.9);
+        }
+        
+        .product-header {
+            display: flex;
+            align-items: flex-start;
+            gap: var(--space-lg);
+            margin-bottom: var(--space-xl);
+        }
+        
+        .product-icon {
+            width: 64px;
+            height: 64px;
+            background: linear-gradient(135deg, var(--accent-500), var(--accent-400));
+            border-radius: var(--radius-xl);
             display: flex;
             align-items: center;
             justify-content: center;
-            margin-bottom: 1.5rem;
-            font-size: 1.5rem;
+            font-size: 2rem;
+            flex-shrink: 0;
+            box-shadow: 0 8px 16px rgba(245, 158, 11, 0.3);
         }
-
-        .feature-card h3 {
-            font-size: 1.3rem;
-            font-weight: 600;
-            margin-bottom: 1rem;
-            color: #333;
+        
+        .product-card.featured .product-icon {
+            background: var(--accent-500);
+            color: var(--primary-900);
         }
-
-        .feature-card p {
-            color: #666;
-            line-height: 1.6;
+        
+        .product-info {
+            flex: 1;
         }
-
-        /* Calculator Section */
-        .calculator {
-            padding: 100px 0;
-            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+        
+        .product-badge {
+            display: inline-block;
+            background: var(--accent-500);
+            color: var(--primary-900);
+            font-family: var(--font-heading);
+            font-size: 0.75rem;
+            font-weight: 700;
+            padding: 0.25rem 0.75rem;
+            border-radius: var(--radius-sm);
+            margin-bottom: var(--space-sm);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
         }
-
-        .calculator-card {
-            background: white;
-            padding: 3rem;
-            border-radius: 20px;
-            box-shadow: 0 20px 60px rgba(0,0,0,0.1);
-            max-width: 600px;
-            margin: 0 auto;
-            animation: slideInUp 0.8s ease-out;
+        
+        .product-card.featured .product-badge {
+            background: var(--accent-400);
         }
-
-        @keyframes slideInUp {
-            from {
-                opacity: 0;
-                transform: translateY(50px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
+        
+        .product-title {
+            font-family: var(--font-heading);
+            font-size: 1.75rem;
+            font-weight: 800;
+            color: var(--primary-900);
+            margin-bottom: var(--space-sm);
+            letter-spacing: -0.01em;
         }
-
-        .form-group {
-            margin-bottom: 1.5rem;
-        }
-
-        .form-group label {
-            display: block;
-            margin-bottom: 0.5rem;
-            font-weight: 600;
-            color: #333;
-        }
-
-        .form-group input,
-        .form-group select {
-            width: 100%;
-            padding: 12px 16px;
-            border: 2px solid #e1e5e9;
-            border-radius: 10px;
+        
+        .product-description {
             font-size: 1rem;
-            transition: all 0.3s ease;
+            color: var(--neutral-700);
+            line-height: 1.6;
+            margin-bottom: var(--space-lg);
+            max-width: 65ch;
         }
-
-        .form-group input:focus,
-        .form-group select:focus {
-            outline: none;
-            border-color: #667eea;
-            box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+        
+        .product-features {
+            display: grid;
+            gap: var(--space-md);
+            margin-bottom: var(--space-xl);
         }
-
-        /* Footer */
-        .footer {
-            background: #2c3e50;
+        
+        .feature-item {
+            display: flex;
+            align-items: center;
+            gap: var(--space-sm);
+            font-size: 0.9375rem;
+            color: var(--neutral-700);
+        }
+        
+        .feature-icon {
+            width: 20px;
+            height: 20px;
+            background: var(--success);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
             color: white;
-            padding: 50px 0 20px;
+            font-size: 0.75rem;
+            flex-shrink: 0;
+        }
+        
+        .product-card.featured .feature-icon {
+            background: var(--accent-400);
+        }
+
+        .product-card.featured .product-features {
+            grid-template-columns: 1fr 1fr;
+            gap: var(--space-md) var(--space-xl);
+            max-width: 100%;
+        }
+
+        .product-cta {
+            display: flex;
+            gap: var(--space-md);
+        }
+        
+        /* Partners Section */
+        .partners-section {
+            background: linear-gradient(180deg, var(--neutral-50) 0%, white 100%);
+        }
+        
+        .partners-grid {
+            position: relative;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: var(--space-xl);
+        }
+        
+        .partner-card {
+            background: white;
+            border-radius: var(--radius-2xl);
+            padding: var(--space-2xl);
+            box-shadow: var(--shadow-md);
+            border: 1px solid var(--neutral-200);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            text-decoration: none;
+            color: inherit;
+            display: flex;
+            flex-direction: column;
+            position: relative;
+        }
+        
+        .partner-card:hover {
+            transform: translateY(-6px);
+            box-shadow: var(--shadow-xl);
+            border-color: var(--accent-500);
+        }
+        
+        /* Featured Partner Card - Ипотека */
+        .partner-card.partner-featured {
+            position: relative !important;
+            overflow: visible !important;
+            background: linear-gradient(135deg, var(--primary-900) 0%, var(--primary-700) 100%);
+            color: white;
+            border: 2px solid var(--accent-500);
+            grid-column: 1 / -1;
+            padding: var(--space-xl) var(--space-2xl);
+            flex-direction: row;
+            align-items: center;
+            gap: var(--space-xl);
+        }
+
+        .partner-card.partner-featured:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 20px 40px -12px rgba(10, 37, 64, 0.4),
+                        0 0 0 3px var(--accent-400);
+        }
+
+        .partner-card.partner-featured .partner-icon-featured {
+            width: 64px;
+            height: 64px;
+            font-size: 2rem;
+            flex-shrink: 0;
+        }
+
+        .partner-featured-content {
+            flex: 1;
+            min-width: 0;
+        }
+
+        .partner-card.partner-featured .partner-title {
+            color: white;
+            font-size: 1.5rem;
+            margin-bottom: var(--space-xs);
+        }
+
+        .partner-card.partner-featured .partner-description {
+            color: rgba(255, 255, 255, 0.85);
+            font-size: 1rem;
+            margin-bottom: var(--space-md);
+        }
+
+        .partner-featured-cta {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+            gap: var(--space-sm);
+            flex-shrink: 0;
+            margin-top: auto;
+        }
+
+        /* Бейдж "Рекомендуем" для карточки партнёра */
+        .partner-badge-top {
+            position: absolute;
+            top: -12px;
+            right: 24px;
+            background: var(--accent-500);
+            color: var(--primary-900);
+            font-family: var(--font-heading);
+            font-size: 0.75rem;
+            font-weight: 800;
+            padding: 0.5rem 1rem;
+            border-radius: var(--radius-md);
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            box-shadow: 0 4px 12px rgba(245, 158, 11, 0.4);
+            z-index: 100;
+            pointer-events: none;
+        }
+        
+        .partner-icon {
+            width: 72px;
+            height: 72px;
+            background: var(--accent-500);
+            color: var(--primary-900);
+            border-radius: var(--radius-xl);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2.25rem;
+            margin-bottom: var(--space-lg);
+        }
+        
+        .partner-icon-featured {
+            width: 96px;
+            height: 96px;
+            background: var(--accent-500);
+            color: var(--primary-900);
+            box-shadow: 0 12px 24px rgba(245, 158, 11, 0.4);
+            font-size: 3rem;
+        }
+        
+        .partner-title {
+            font-family: var(--font-heading);
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-900);
+            margin-bottom: var(--space-md);
+            letter-spacing: -0.01em;
+        }
+        
+        .partner-description {
+            font-size: 1rem;
+            color: var(--neutral-700);
+            line-height: 1.6;
+            margin-bottom: var(--space-lg);
+            flex: 1;
+            max-width: 65ch;
+        }
+        
+        .partner-cta {
+            display: inline-flex;
+            align-items: center;
+            gap: var(--space-sm);
+            font-family: var(--font-heading);
+            font-weight: 700;
+            color: var(--accent-500);
+            font-size: 0.9375rem;
+            transition: gap 0.2s ease;
+        }
+        
+        .partner-card:hover .partner-cta {
+            gap: var(--space-md);
+        }
+        
+        /* Заметная primary CTA для featured карточки */
+        .partner-cta-primary {
+            background: var(--accent-500);
+            color: var(--primary-900);
+            font-family: var(--font-heading);
+            font-size: 1rem;
+            font-weight: 700;
+            padding: 0.875rem 1.75rem;
+            border-radius: var(--radius-lg);
+            text-align: center;
+            box-shadow: 0 8px 20px -4px rgba(245, 158, 11, 0.5);
+            transition: all 0.2s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: var(--space-xs);
+            white-space: nowrap;
+        }
+
+        .partner-card.partner-featured:hover .partner-cta-primary {
+            background: #E8940A;
+            transform: translateY(-2px);
+            box-shadow: 0 12px 28px -4px rgba(245, 158, 11, 0.6);
+        }
+
+        /* Подсказка под кнопкой */
+        .partner-notice {
+            font-size: 0.75rem;
+            color: rgba(255, 255, 255, 0.6);
+            text-align: right;
+            max-width: 180px;
+            line-height: 1.4;
+        }
+        
+        .partner-badge {
+            position: absolute;
+            top: 16px;
+            right: 16px;
+            background: var(--neutral-100);
+            color: var(--neutral-600);
+            font-size: 0.7rem;
+            font-weight: 600;
+            padding: 0.35rem 0.65rem;
+            border-radius: var(--radius-sm);
+            text-transform: uppercase;
+            letter-spacing: 0.03em;
+        }
+        
+        .trust-badge {
+            text-align: center;
+            margin-top: var(--space-2xl);
+            padding: var(--space-lg);
+            background: var(--neutral-100);
+            border-radius: var(--radius-xl);
+        }
+        
+        .trust-badge p {
+            color: var(--neutral-700);
+            font-size: 0.9375rem;
+        }
+        
+        /* Advantages Section */
+        .advantages-section {
+            background: white;
+        }
+        
+        .advantages-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: var(--space-2xl);
+        }
+        
+        .advantage-card {
             text-align: center;
         }
-
-        .footer-content {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
-            margin-bottom: 2rem;
-        }
-
-        .footer-section h3 {
-            margin-bottom: 1rem;
-            font-size: 1.2rem;
-        }
-
-        .footer-section p,
-        .footer-section a {
-            color: rgba(255, 255, 255, 0.8);
-            text-decoration: none;
-            margin-bottom: 0.5rem;
-            display: block;
-        }
-
-        .footer-section a:hover {
+        
+        .advantage-icon {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, var(--primary-900), var(--primary-700));
+            border-radius: var(--radius-2xl);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2.5rem;
+            margin: 0 auto var(--space-lg);
+            box-shadow: var(--shadow-lg);
             color: white;
         }
-
-        /* Inssmart Widget Customization */
-        #inssmart-b2c {
-            border-radius: 15px !important;
-            overflow: hidden !important;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.1) !important;
+        
+        .advantage-title {
+            font-family: var(--font-heading);
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--primary-900);
+            margin-bottom: var(--space-sm);
         }
-
-        /* Override widget colors to match site theme */
-        #inssmart-b2c iframe {
-            border-radius: 15px !important;
+        
+        .advantage-description {
+            font-size: 1rem;
+            color: var(--neutral-700);
+            line-height: 1.6;
+            max-width: 65ch;
         }
-
-        /* Custom CSS for widget styling */
-        .inssmart-section {
-            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+        
+        /* CTA Section */
+        .cta-section {
+            background: linear-gradient(165deg, var(--primary-900) 0%, var(--primary-700) 100%);
+            color: white;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
         }
-
-        /* Tab Buttons */
-        .tab-btn:hover {
-            background: linear-gradient(135deg, #667eea, #764ba2) !important;
-            color: white !important;
+        
+        .cta-section::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 1000px;
+            height: 1000px;
+            background: radial-gradient(circle, rgba(245, 158, 11, 0.2) 0%, transparent 70%);
         }
-
-        .tab-btn.active {
-            background: linear-gradient(135deg, #667eea, #764ba2) !important;
-            color: white !important;
+        
+        .cta-content {
+            position: relative;
+            z-index: 1;
         }
-
-        /* Loading Spinner Animation */
-        @keyframes spin {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
+        
+        .cta-title {
+            font-family: var(--font-heading);
+            font-size: 3rem;
+            font-weight: 800;
+            margin-bottom: var(--space-md);
+            letter-spacing: -0.02em;
         }
-
-        /* Partner Cards Hover Effects */
-        .partner-card:hover {
-            transform: translateY(-10px) scale(1.02);
-            box-shadow: 0 25px 50px rgba(0,0,0,0.2);
+        
+        .cta-subtitle {
+            font-size: 1.25rem;
+            color: rgba(255, 255, 255, 0.85);
+            margin-bottom: var(--space-2xl);
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
         }
-
-        .partner-card:hover div[style*="background: rgba(255, 255, 255, 0.2)"] {
-            background: rgba(255, 255, 255, 0.3) !important;
-            transform: scale(1.05);
+        
+        /* Footer */
+        .footer {
+            background: var(--primary-900);
+            color: rgba(255, 255, 255, 0.8);
+            padding: var(--space-3xl) var(--space-xl) var(--space-xl);
         }
-        @media (max-width: 768px) {
-            .hero h1 {
-                font-size: 2.5rem;
+        
+        .footer-container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+        
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: var(--space-3xl);
+            margin-bottom: var(--space-2xl);
+        }
+        
+        .footer-brand h3 {
+            font-family: var(--font-heading);
+            font-size: 1.75rem;
+            font-weight: 800;
+            color: white;
+            margin-bottom: var(--space-md);
+            letter-spacing: -0.02em;
+        }
+        
+        .footer-brand p {
+            line-height: 1.6;
+            margin-bottom: var(--space-lg);
+        }
+        
+        .footer-section h4 {
+            font-family: var(--font-heading);
+            font-size: 1rem;
+            font-weight: 700;
+            color: white;
+            margin-bottom: var(--space-md);
+            letter-spacing: -0.01em;
+        }
+        
+        .footer-links {
+            display: flex;
+            flex-direction: column;
+            gap: var(--space-sm);
+        }
+        
+        .footer-links a {
+            color: rgba(255, 255, 255, 0.9);
+            text-decoration: none;
+            transition: color 0.2s ease;
+            font-size: 0.9375rem;
+        }
+        
+        .footer-links a:hover {
+            color: var(--accent-400);
+        }
+        
+        .footer-bottom {
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding-top: var(--space-lg);
+            text-align: center;
+            font-size: 0.875rem;
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 1024px) {
+            .hero-container {
+                grid-template-columns: 1fr;
+                gap: var(--space-2xl);
+            }
+
+            .hero-visual {
+                height: auto;
+                max-width: 400px;
+                margin: 0 auto;
+            }
+
+            .hero-image-container {
+                max-width: 100%;
+            }
+
+            .trust-floating {
+                padding: var(--space-sm) var(--space-md);
+            }
+
+            .trust-floating-1 {
+                right: -10px;
+            }
+
+            .trust-floating-2 {
+                left: -10px;
+            }
+
+            .trust-floating-value {
+                font-size: 1rem;
+            }
+
+            .trust-floating-label {
+                font-size: 0.7rem;
+            }
+
+            .products-grid {
+                grid-template-columns: 1fr;
             }
             
-            .hero p {
-                font-size: 1.1rem;
+            .partners-grid {
+                grid-template-columns: 1fr;
             }
             
-            .cta-buttons {
-                flex-direction: column;
+            .advantages-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .footer-grid {
+                grid-template-columns: 1fr 1fr;
+                gap: var(--space-xl);
+            }
+
+            .footer-brand {
+                grid-column: 1 / -1;
+            }
+        }
+
+        /* --- Horizontal Calculator Card for Desktop --- */
+        @media (min-width: 1025px) {
+            .partner-card.partner-featured {
+                display: grid;
+                grid-template-columns: auto 1fr 280px;
+                grid-template-areas:
+                    "icon content cta";
                 align-items: center;
+                gap: 0 var(--space-2xl);
+                padding: var(--space-xl) var(--space-2xl);
+                text-align: left;
+            }
+
+            .partner-card.partner-featured .partner-icon-featured {
+                grid-area: icon;
+                width: 72px;
+                height: 72px;
+                font-size: 2.25rem;
+                margin-bottom: 0;
+            }
+
+            .partner-featured-content {
+                grid-area: content;
+            }
+
+            .partner-card.partner-featured .partner-title {
+                font-size: 1.5rem;
+                margin-bottom: var(--space-xs);
+            }
+
+            .partner-card.partner-featured .partner-description {
+                font-size: 1rem;
+                max-width: 100%;
+            }
+
+            .partner-featured-cta {
+                grid-area: cta;
+                align-items: stretch;
+            }
+
+            .partner-card.partner-featured .partner-cta-primary {
+                width: 100%;
+                justify-content: center;
+                padding: 1rem 1.5rem;
+            }
+
+            .partner-card.partner-featured .partner-notice {
+                text-align: center;
+                max-width: none;
+                margin-top: var(--space-xs);
+            }
+
+            /* Бейдж в десктоп-режиме - абсолютное позиционирование поверх grid */
+            .partner-card.partner-featured .partner-badge-top {
+                position: absolute;
+                top: -12px;
+                right: 24px;
+                grid-area: auto; /* Игнорируем grid */
+            }
+        }
+
+        @media (max-width: 768px) {
+            .footer-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-brand {
+                grid-column: auto;
+            }
+            :root {
+                --space-3xl: 3rem;
+                --space-4xl: 4rem;
             }
             
-            .nav-links {
+            .header-container {
+                padding: var(--space-md) var(--space-lg);
+            }
+            
+            .logo {
+                font-size: 1.25rem;
+            }
+            
+            .mobile-menu-toggle {
+                display: flex;
+            }
+            
+            .nav-menu {
+                position: fixed;
+                top: 84px;
+                left: 0;
+                right: 0;
+                background: rgba(250, 250, 250, 0.98);
+                backdrop-filter: blur(20px);
+                flex-direction: column;
+                padding: var(--space-xl);
+                gap: var(--space-lg);
+                box-shadow: var(--shadow-lg);
+                transform: translateY(-100%);
+                opacity: 0;
+                pointer-events: none;
+                transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+                z-index: 999;
+                align-items: stretch;
+            }
+            
+            .nav-menu.active {
+                transform: translateY(0);
+                opacity: 1;
+                pointer-events: all;
+            }
+            
+            .nav-link {
+                width: 100%;
+                text-align: center;
+                padding: var(--space-sm) 0;
+            }
+            
+            .nav-link.primary {
+                text-align: center;
+            }
+            
+            .hero-content h1 {
+                font-size: 2rem;
+            }
+            
+            .hero-subtitle {
+                font-size: 1rem;
+            }
+            
+            .hero-stats {
+                flex-direction: column;
+                gap: var(--space-lg);
+            }
+            
+            .stat-value {
+                font-size: 2rem;
+            }
+            
+            .hero-cta {
+                flex-direction: column;
+            }
+            
+            .btn {
+                width: 100%;
+                justify-content: center;
+            }
+            
+            .hero-visual {
                 display: none;
             }
             
             .section-title {
                 font-size: 2rem;
             }
-        }
+            
+            .section-subtitle {
+                font-size: 1rem;
+            }
+            
+            .partners-info-banner {
+                flex-direction: column;
+                gap: var(--space-md);
+                padding: var(--space-lg);
+                margin: var(--space-lg) var(--space-md) 0;
+            }
+            
+            .info-icon {
+                font-size: 1.75rem;
+            }
+            
+            .info-content {
+                font-size: 0.875rem;
+            }
+            
+            .partner-card.partner-featured {
+                flex-direction: column;
+                align-items: stretch;
+                padding: var(--space-lg);
+                gap: var(--space-md);
+                grid-column: 1;
+            }
 
-        /* Scroll animations */
-        .animate-on-scroll {
+            .partner-card.partner-featured .partner-icon-featured {
+                width: 56px;
+                height: 56px;
+                font-size: 1.75rem;
+            }
+
+            .partner-featured-content {
+                text-align: center;
+            }
+
+            .partner-card.partner-featured .partner-title {
+                font-size: 1.25rem;
+            }
+
+            .partner-card.partner-featured .partner-description {
+                font-size: 0.9rem;
+            }
+
+            .partner-featured-cta {
+                align-items: center;
+            }
+
+            .partner-cta-primary {
+                width: 100%;
+                justify-content: center;
+            }
+
+            .partner-notice {
+                text-align: center;
+                max-width: none;
+            }
+
+            /* Бейдж на мобильном */
+            .partner-badge-top {
+                top: -10px;
+                right: 16px;
+                font-size: 0.7rem;
+                padding: 0.4rem 0.75rem;
+            }
+
+            .product-cta {
+                flex-direction: column;
+            }
+
+            .product-card.featured .product-features {
+                grid-template-columns: 1fr;
+            }
+
+            .cta-title {
+                font-size: 1.75rem;
+            }
+
+            .cta-subtitle {
+                font-size: 1rem;
+            }
+        }
+        
+        /* Scroll Reveal Animation */
+        .reveal {
             opacity: 0;
             transform: translateY(30px);
-            transition: all 0.8s ease;
+            transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
         }
 
-        .animate-on-scroll.animated {
+        .reveal.active {
             opacity: 1;
             transform: translateY(0);
         }
 
         /* Hero Calculator Styles */
         .hero-calculator-card {
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(10px);
-            padding: 2rem;
-            border-radius: 20px;
-            box-shadow: 0 20px 40px rgba(0,0,0,0.2);
-            max-width: 480px;
-            margin: 2rem auto 0;
-            border: 1px solid rgba(255, 255, 255, 0.4);
-            text-align: left;
+            background: rgba(255, 255, 255, 0.98);
+            backdrop-filter: blur(12px);
+            padding: var(--space-md) var(--space-lg);
+            border-radius: var(--radius-2xl);
+            box-shadow: 0 20px 50px rgba(10, 37, 64, 0.15), 0 0 0 1px rgba(255,255,255,0.5);
+            margin-top: var(--space-lg);
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            gap: 0;
         }
 
         .calc-label {
-            display: block;
-            font-weight: 700;
-            color: #333;
-            margin-bottom: 0.75rem;
+            display: flex;
+            align-items: center;
+            gap: var(--space-sm);
+            font-weight: 600;
+            color: var(--primary-900);
             font-size: 0.9rem;
+            padding: var(--space-sm) var(--space-md);
+            white-space: nowrap;
         }
 
-        .calc-input-group {
-            display: flex;
-            gap: 0.75rem;
-            margin-bottom: 1rem;
+        .calc-label .ph {
+            font-size: 1.25rem;
+            color: var(--accent-500);
+        }
+
+        .calc-divider {
+            width: 1px;
+            height: 32px;
+            background: var(--neutral-200);
+            flex-shrink: 0;
+        }
+
+        .calc-select-wrapper {
+            flex: 1;
+            padding: 0 var(--space-md);
+            min-width: 160px;
         }
 
         .calc-select {
-            flex: 1;
-            padding: 0.8rem 1rem;
-            border: 2px solid #e1e5e9;
-            border-radius: 10px;
-            font-family: inherit;
+            width: 100%;
+            padding: 0.6rem 2rem 0.6rem 1rem;
+            border: 1px solid var(--neutral-300);
+            border-radius: var(--radius-md);
+            background: var(--neutral-100);
+            font-family: var(--font-heading);
             font-size: 1rem;
-            color: #333;
-            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%23667eea' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
-            background-repeat: no-repeat;
-            background-position: right 1rem center;
-            background-size: 1.2em;
-            background-color: white;
-            appearance: none;
+            font-weight: 600;
+            color: var(--primary-900);
             cursor: pointer;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%23114E7E' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+            background-position: right 0.75rem center;
+            background-size: 1.2em;
+            appearance: none;
+            transition: border-color 0.2s ease, background-color 0.2s ease;
+        }
+
+        .calc-select:hover {
+            border-color: var(--accent-500);
+            background: white;
         }
 
         .calc-select:focus {
             outline: none;
-            border-color: #667eea;
-            box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+        }
+
+        .calc-btn {
+            background: var(--accent-500);
+            color: var(--primary-900);
+            font-family: var(--font-heading);
+            font-size: 1rem;
+            font-weight: 700;
+            padding: 0.9rem 1.5rem;
+            border-radius: var(--radius-lg);
+            border: none;
+            cursor: pointer;
+            white-space: nowrap;
+            display: flex;
+            align-items: center;
+            gap: var(--space-xs);
+            transition: all 0.2s ease;
+            box-shadow: 0 4px 12px rgba(245, 158, 11, 0.3);
+        }
+
+        .calc-btn:hover {
+            background: #E8940A;
+            transform: scale(1.02);
+            box-shadow: 0 6px 16px rgba(245, 158, 11, 0.4);
         }
 
         .hero-micro-text {
-            font-size: 0.85rem;
-            color: #666;
-            margin-top: 0.75rem;
+            font-size: 0.8rem;
+            color: var(--neutral-700);
+            margin-top: var(--space-sm);
             display: flex;
             align-items: center;
             gap: 6px;
@@ -584,9 +1526,6 @@
         .btn-full-width {
             width: 100%;
             justify-content: center;
-            display: flex;
-            align-items: center;
-            gap: 8px;
         }
 
         /* Mobile Sticky CTA */
@@ -598,10 +1537,10 @@
             background: white;
             padding: 1rem;
             padding-bottom: calc(1rem + env(safe-area-inset-bottom, 0px));
-            box-shadow: 0 -4px 20px rgba(0,0,0,0.1);
+            box-shadow: 0 -4px 20px rgba(10, 37, 64, 0.1);
             z-index: 9999;
             display: none;
-            border-top: 1px solid #e1e5e9;
+            border-top: 1px solid var(--neutral-200);
         }
 
         @media (max-width: 768px) {
@@ -614,12 +1553,34 @@
                 padding-bottom: 80px;
             }
             .hero-calculator-card {
-                width: 100%;
-                max-width: 100%;
-                margin-top: 1.5rem;
-            }
-            .calc-input-group {
                 flex-direction: column;
+                align-items: stretch;
+                border-radius: var(--radius-xl);
+                padding: var(--space-md);
+                gap: var(--space-md);
+                margin-top: var(--space-md);
+            }
+            .calc-label {
+                padding: 0;
+                justify-content: center;
+            }
+            .calc-divider {
+                display: none;
+            }
+            .calc-select-wrapper {
+                padding: 0;
+                min-width: auto;
+            }
+            .calc-select {
+                padding: 0.9rem 2.5rem 0.9rem 1rem;
+                border: 2px solid var(--neutral-200);
+                border-radius: var(--radius-lg);
+                background-color: white;
+            }
+            .calc-btn {
+                width: 100%;
+                justify-content: center;
+                padding: 1rem 1.5rem;
             }
             .btn-full-width {
                 width: 100%;
@@ -632,104 +1593,141 @@
             to { transform: translateY(0); }
         }
 
-        /* Pre-loader Overlay */
-        .preloader-overlay {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            z-index: 99999;
-            display: flex;
-            flex-direction: column;
+        /* Стили модального окна */
+        .modal-overlay {
+            position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(10, 37, 64, 0.8); /* Затемнение фона */
+            backdrop-filter: blur(4px);
+            z-index: 9999;
+            display: flex; justify-content: center; align-items: center;
+            opacity: 0; visibility: hidden;
+            transition: 0.3s ease;
+        }
+        .modal-overlay.active { opacity: 1; visibility: visible; }
+
+        .modal-content {
+            background: white;
+            width: 95%; max-width: 1000px; height: 90vh; /* Почти во весь экран */
+            border-radius: 16px;
+            display: flex; flex-direction: column;
+            box-shadow: 0 20px 50px rgba(10, 37, 64, 0.25);
+            transform: scale(0.9);
+            transition: transform 0.3s ease;
+        }
+
+        .modal-overlay.active .modal-content {
+            transform: scale(1);
+        }
+
+        .modal-header {
+            padding: 1rem 1.5rem;
+            border-bottom: 1px solid #eee;
+            display: flex; justify-content: space-between; align-items: center;
+        }
+
+        .modal-title { font-weight: 700; font-size: 1.2rem; color: #0A2540; }
+        .modal-close { font-size: 2rem; background: none; border: none; cursor: pointer; line-height: 1; }
+
+        .modal-body {
+            flex: 1;
+            overflow-y: auto; /* Скролл внутри модалки, если виджет длинный */
+            padding: 0;
+            position: relative;
+        }
+
+        /* Phosphor Icons Styles */
+        .ph {
+            display: inline-flex;
             align-items: center;
             justify-content: center;
-            opacity: 0;
-            visibility: hidden;
-            transition: opacity 0.3s ease, visibility 0.3s ease;
+            vertical-align: middle;
+            line-height: 1;
         }
 
-        .preloader-overlay.active {
-            opacity: 1;
-            visibility: visible;
+        .product-icon .ph,
+        .partner-icon .ph,
+        .advantage-icon .ph,
+        .feature-icon .ph {
+            font-size: inherit;
+            color: inherit;
         }
 
-        .preloader-spinner {
-            width: 60px;
-            height: 60px;
-            border: 4px solid rgba(255, 255, 255, 0.3);
-            border-top-color: white;
-            border-radius: 50%;
-            animation: spin 1s linear infinite;
-            margin-bottom: 1.5rem;
+        .info-icon .ph {
+            font-size: 1.75rem;
+            color: var(--accent-500);
         }
 
-        @keyframes spin {
-            to { transform: rotate(360deg); }
+        .hero-micro-text .ph,
+        .trust-badge .ph {
+            font-size: 1rem;
+            color: var(--accent-500);
         }
 
-        .preloader-text {
-            color: white;
-            font-size: 1.2rem;
-            font-weight: 600;
-            text-align: center;
-            max-width: 300px;
-            line-height: 1.5;
-        }
-
-        .preloader-dots {
-            display: inline-block;
-        }
-
-        .preloader-dots::after {
-            content: '';
-            animation: dots 1.5s steps(4, end) infinite;
-        }
-
-        @keyframes dots {
-            0%, 20% { content: ''; }
-            40% { content: '.'; }
-            60% { content: '..'; }
-            80%, 100% { content: '...'; }
+        .footer-links .ph {
+            margin-right: 0.5rem;
+            font-size: 1rem;
+            opacity: 0.8;
         }
     </style>
 </head>
 <body>
-    <!-- Pre-loader Overlay -->
-    <div class="preloader-overlay" id="preloader">
-        <div class="preloader-spinner"></div>
-        <div class="preloader-text">
-            Соединяемся с базой страховых компаний<span class="preloader-dots"></span>
-        </div>
-    </div>
+    <!-- Background Pattern -->
+    <div class="page-background"></div>
 
-    <div class="bg-animation"></div>
-    
-    <header class="header" role="banner">
-        <div class="container">
-            <nav class="nav" role="navigation" aria-label="Основная навигация">
-                <div class="logo">
-                    <a href="/" aria-label="InsDuddy - Главная страница">InsDuddy</a>
-                </div>
-                <ul class="nav-links">
-                    <li><a href="#home" aria-label="Перейти к главной секции">Главная</a></li>
-                    <li><a href="#services" aria-label="Перейти к услугам">Услуги</a></li>
-                    <li><a href="#calculator" aria-label="Перейти к калькулятору">Калькулятор</a></li>
-                    <li><a href="#contact" aria-label="Перейти к контактам">Контакты</a></li>
+    <!-- Header -->
+    <header class="header" id="header">
+        <div class="header-container">
+            <div class="logo">Моя<span class="logo-accent">Страховка</span></div>
+            <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Toggle menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <nav>
+                <ul class="nav-menu" id="navMenu">
+                    <li><a href="#products" class="nav-link">О страховании</a></li>
+                    <li><a href="#partners" class="nav-link">Рассчитать онлайн</a></li>
+                    <li><a href="#advantages" class="nav-link">Преимущества</a></li>
+                    <li><a href="#contact" class="nav-link primary">Контакты</a></li>
                 </ul>
             </nav>
         </div>
     </header>
 
-    <main role="main">
-        <section class="hero" id="home" aria-labelledby="hero-title">
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-container">
             <div class="hero-content">
-                <h1 id="hero-title">Оформите ОСАГО онлайн со скидкой до 20%</h1>
-                <p>Быстро рассчитывайте и оформляйте полис ОСАГО, выбирайте надежное страхование для ипотеки по всей России. Скидка агента гарантирована! Работаем только с лицензированными партнерами.</p>
-                <div class="hero-calculator-card">
-                    <label class="calc-label">Выберите ваш банк для расчёта:</label>
-                    <div class="calc-input-group">
+                <h1>
+                    Страхование <span class="hero-accent">ипотеки</span> — надёжная защита вашей недвижимости
+                </h1>
+                <p class="hero-subtitle">
+                    Профессиональное ипотечное страхование онлайн с выгодными условиями. 
+                    Быстрое оформление, прозрачные тарифы, поддержка 24/7.
+                </p>
+                
+                <div class="hero-stats">
+                    <div class="stat-item">
+                        <div class="stat-value">от 2 000₽</div>
+                        <div class="stat-label">стоимость в год</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-value">24/7</div>
+                        <div class="stat-label">онлайн поддержка</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-value">15 000+</div>
+                        <div class="stat-label">довольных клиентов</div>
+                    </div>
+                </div>
+                
+                <div class="hero-calculator-card reveal active">
+                    <div class="calc-label">
+                        <i class="ph ph-bank"></i>
+                        <span>Ваш банк:</span>
+                    </div>
+                    <div class="calc-divider"></div>
+                    <div class="calc-select-wrapper">
                         <select class="calc-select" id="bank-select">
                             <option>Сбербанк</option>
                             <option>ВТБ</option>
@@ -738,314 +1736,520 @@
                             <option>Другой банк</option>
                         </select>
                     </div>
-                    <a href="#calculator" class="btn btn-primary btn-full-width" aria-label="Рассчитать точную стоимость страховки">
-                        Рассчитать точную стоимость
-                        <span>→</span>
-                    </a>
-                    <div class="hero-micro-text">
-                        <span>🔒</span> Сравним тарифы в 20+ страховых компаниях
+                    <div class="calc-divider"></div>
+                    <button onclick="openMortgageModal()" class="calc-btn">
+                        Рассчитать
+                        <i class="ph ph-arrow-right"></i>
+                    </button>
+                </div>
+                <div class="hero-micro-text">
+                    <i class="ph ph-lock-simple"></i> Сравним тарифы в 20+ страховых компаниях
+                </div>
+            </div>
+            
+            <div class="hero-visual">
+                <div class="hero-image-container">
+                    <img
+                        src="image.png"
+                        alt="Страхование ипотеки"
+                        class="hero-image"
+                        loading="eager"
+                    >
+
+                    <!-- Floating trust badges -->
+                    <div class="trust-floating trust-floating-1">
+                        <i class="ph ph-shield-check"></i>
+                        <div class="trust-floating-content">
+                            <span class="trust-floating-value">20+ компаний</span>
+                            <span class="trust-floating-label">сравниваем цены</span>
+                        </div>
+                    </div>
+
+                    <div class="trust-floating trust-floating-2">
+                        <i class="ph ph-clock"></i>
+                        <div class="trust-floating-content">
+                            <span class="trust-floating-value">15 минут</span>
+                            <span class="trust-floating-label">оформление онлайн</span>
+                        </div>
+                    </div>
+
+                    <div class="trust-floating trust-floating-3">
+                        <i class="ph ph-trend-down"></i>
+                        <div class="trust-floating-content">
+                            <span class="trust-floating-value">до 20%</span>
+                            <span class="trust-floating-label">экономия</span>
+                        </div>
                     </div>
                 </div>
             </div>
-        </section>
-
-        <section class="features" id="services" aria-labelledby="services-title">
-            <div class="container">
-                <h2 id="services-title">Почему выбирают InsDuddy для страхования</h2>
-                <div class="features-grid" role="list">
-                    <article class="feature-card animate-on-scroll" role="listitem">
-                        <div class="feature-icon" aria-hidden="true">🚗</div>
-                        <h3>ОСАГО онлайн за 5 минут</h3>
-                        <p>Быстрое оформление полиса ОСАГО с мгновенной выдачей электронного документа. Все данные защищены и сохраняются в системе РСА.</p>
-                    </article>
-                    <article class="feature-card animate-on-scroll" role="listitem">
-                        <div class="feature-icon" aria-hidden="true">🏠</div>
-                        <h3>Страхование ипотеки и недвижимости</h3>
-                        <p>Надежная защита вашей недвижимости и ипотечного кредита. Выгодные условия от ведущих страховых компаний России.</p>
-                    </article>
-                    <article class="feature-card animate-on-scroll" role="listitem">
-                        <div class="feature-icon" aria-hidden="true">💰</div>
-                        <h3>Агентская скидка до 20%</h3>
-                        <p>Эксклюзивные скидки от наших партнеров. Экономьте до 20% на страховых полисах при онлайн-оформлении через наш сервис.</p>
-                    </article>
-                    <article class="feature-card animate-on-scroll" role="listitem">
-                        <div class="feature-icon" aria-hidden="true">🌍</div>
-                        <h3>Оформление по всей России</h3>
-                        <p>Возможность оформления страховки из любой точки России. Работаем 24/7 без выходных и праздников во всех регионах РФ.</p>
-                    </article>
-                    <article class="feature-card animate-on-scroll" role="listitem">
-                        <div class="feature-icon" aria-hidden="true">⚡</div>
-                        <h3>Мгновенное оформление</h3>
-                        <p>Среднее время оформления полиса составляет всего 5 минут. Никаких очередей и лишней бумажной волокиты. Сразу получаете e-полис.</p>
-                    </article>
-                    <article class="feature-card animate-on-scroll" role="listitem">
-                        <div class="feature-icon" aria-hidden="true">🛡️</div>
-                        <h3>Только лицензированные партнеры</h3>
-                        <p>Работаем только с проверенными страховыми компаниями. Все полисы имеют юридическую силу и признаются ГИБДД и банками.</p>
-                    </article>
-                </div>
-            </div>
-        </section>
-
-    <!-- Partner Calculators Section -->
-    <section class="partners" id="calculator" style="padding: 100px 0; background: white;">
-        <div class="container">
-            <h2 class="section-title animate-on-scroll">Рассчитать стоимость страховки</h2>
-            <p style="text-align: center; font-size: 1.2rem; color: #666; margin-bottom: 3rem;" class="animate-on-scroll">
-                Воспользуйтесь калькуляторами наших проверенных партнеров для точного расчета стоимости
-            </p>
-            
-            <div class="partners-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 2rem; margin-top: 3rem;">
-                
-                <!-- Partner 1: Инссмарт ОСАГО/КАСКО -->
-                <a href="https://widgets.inssmart.ru/contract/eosago?appId=3067e739-11bc-51d3-bdb3-aed23e20e2da&secret=ff8ef8b9-c909-5ed3-9b62-d57e432056b6" target="_blank" style="text-decoration: none; color: inherit;">
-                  <div class="partner-card animate-on-scroll" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); padding: 2.5rem; border-radius: 20px; text-align: center; color: white; position: relative; overflow: hidden; transition: all 0.3s ease; cursor: pointer;">
-                    <div style="position: absolute; top: -50%; left: -50%; width: 200%; height: 200%; background: url('data:image/svg+xml,<svg xmlns=&quot;http://www.w3.org/2000/svg&quot; viewBox=&quot;0 0 100 100&quot;><circle cx=&quot;25&quot; cy=&quot;25&quot; r=&quot;2&quot; fill=&quot;rgba(255,255,255,0.1)&quot;/><circle cx=&quot;75&quot; cy=&quot;75&quot; r=&quot;1.5&quot; fill=&quot;rgba(255,255,255,0.1)&quot;/></svg>') repeat; animation: float 15s linear infinite;"></div>
-                        <div style="position: relative; z-index: 2;">
-                          <div style="width: 80px; height: 80px; background: rgba(255, 255, 255, 0.2); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1.5rem; font-size: 2rem;">🚗</div>
-                      <h3 style="font-size: 1.4rem; font-weight: 700; margin-bottom: 1rem;">Калькулятор ОСАГО</h3>
-                  <p style="margin-bottom: 1.5rem; opacity: 0.9; line-height: 1.5;">Быстрый расчет ОСАГО и КАСКО. Электронный полис за 5 минут.</p>
-              <div style="background: rgba(255, 255, 255, 0.2); padding: 12px 24px; border-radius: 30px; display: inline-block; font-weight: 600; backdrop-filter: blur(10px); color: white;">
-        Рассчитать стоимость →
-      </div>
-    </div>
-  </div>
-</a>
-
-                <!-- Partner 2: Инссмарт Ипотека -->
-                <a href="https://widgets.inssmart.ru/contract/mortgage?appId=cc3f4029-d8fa-5436-acfa-04d8d7924382&secret=a959928a-ffdd-5358-a4ce-9d5f1de1432c" target="_blank" style="text-decoration: none; color: inherit;">
-    <div class="partner-card animate-on-scroll" style="background: linear-gradient(135deg, #ff6b6b 0%, #ffa500 100%); padding: 2.5rem; border-radius: 20px; text-align: center; color: white; position: relative; overflow: hidden; transition: all 0.3s ease; cursor: pointer;">
-        <div style="position: absolute; top: -50%; left: -50%; width: 200%; height: 200%; background: url('data:image/svg+xml,<svg xmlns=&quot;http://www.w3.org/2000/svg&quot; viewBox=&quot;0 0 100 100&quot;><circle cx=&quot;30&quot; cy=&quot;30&quot; r=&quot;2&quot; fill=&quot;rgba(255,255,255,0.1)&quot;/><circle cx=&quot;70&quot; cy=&quot;70&quot; r=&quot;1.5&quot; fill=&quot;rgba(255,255,255,0.1)&quot;/></svg>') repeat; animation: float 20s linear infinite reverse;"></div>
-        <div style="position: relative; z-index: 2;">
-            <div style="width: 80px; height: 80px; background: rgba(255, 255, 255, 0.2); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1.5rem; font-size: 2rem;">🏠</div>
-            <h3 style="font-size: 1.4rem; font-weight: 700; margin-bottom: 1rem;">Калькулятор Ипотеки</h3>
-            <p style="margin-bottom: 1.5rem; opacity: 0.9; line-height: 1.5;">Сравнение цен для Сбербанка, ВТБ и других. Электронный полис за 5 минут.</p>
-            <div style="background: rgba(255, 255, 255, 0.2); padding: 12px 24px; border-radius: 30px; display: inline-block; font-weight: 600; backdrop-filter: blur(10px); color: white;">
-                Рассчитать стоимость →
-            </div>
         </div>
-    </div>
-</a>
-
-                <!-- Partner 3: НЭП все виды страхования по ссылке -->
-<a href="https://agentpolis.ru/widgets/v2/cc106ce239509256c9caa29e2c626cdd9057c0ef?mode=referral&hasOsagoB2C=1&hasKasko=1&hasProperty=1&hasNs=1&hasAntiklesh=1&hasMortgage=1" target="_blank" style="text-decoration: none; color: inherit;">
-    <div class="partner-card animate-on-scroll" style="background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%); padding: 2.5rem; border-radius: 20px; text-align: center; color: white; position: relative; overflow: hidden; transition: all 0.3s ease; cursor: pointer;">
-        <div style="position: absolute; top: -50%; left: -50%; width: 200%; height: 200%; background: url('data:image/svg+xml,<svg xmlns=&quot;http://www.w3.org/2000/svg&quot; viewBox=&quot;0 0 100 100&quot;><circle cx=&quot;20&quot; cy=&quot;80&quot; r=&quot;2&quot; fill=&quot;rgba(255,255,255,0.1)&quot;/><circle cx=&quot;80&quot; cy=&quot;20&quot; r=&quot;1.5&quot; fill=&quot;rgba(255,255,255,0.1)&quot;/></svg>') repeat; animation: float 25s linear infinite;"></div>
-        <div style="position: relative; z-index: 2;">
-            <div style="width: 80px; height: 80px; background: rgba(255, 255, 255, 0.2); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1.5rem; font-size: 2rem;">🧮</div>
-            <h3 style="font-size: 1.4rem; font-weight: 700; margin-bottom: 1rem;">Единый калькулятор (Все виды)</h3>
-            <p style="margin-bottom: 1.5rem; opacity: 0.9; line-height: 1.5;">Быстрый расчет за 30 секунд для всех видов страхования</p>
-            <div style="background:#E0F2F1; color:#00695C; padding: 6px 12px; border-radius: 15px; display: inline-block; font-size: 0.85rem; font-weight: 600; margin-bottom: 1rem;">Альтернативный расчёт</div>
-            <div style="background: rgba(255, 255, 255, 0.2); padding: 12px 24px; border-radius: 30px; display: inline-block; font-weight: 600; backdrop-filter: blur(10px);">
-                Рассчитать стоимость →
-            </div>
-        </div>
-    </div>
-</a>
-            
-    <div style="grid-column: 1 / -1; text-align: center; margin-top: 20px;" class="animate-on-scroll">
-    <p style="color: #666; font-size: 1rem; margin-bottom: 1rem;">🔒 Все партнеры проверены и имеют лицензии ЦБ РФ</p>
-    <p style="color: #666; font-size: 0.9rem;">Переход на сайты партнеров осуществляется в новой вкладке</p>
-</div>
-    </div>
     </section>
 
-    <footer class="footer" id="contact">
+    <!-- Products Section -->
+    <section class="section" id="products">
         <div class="container">
-            <div class="footer-content">
-                <div class="footer-section">
-                    <h3>InsDuddy</h3>
-                    <p>Надежное страхование онлайн для всех регионов России</p>
+            <div class="section-header reveal">
+                <div class="section-label">Наши услуги</div>
+                <h2 class="section-title">Полный спектр страхования</h2>
+                <p class="section-subtitle">
+                    Подберём оптимальное решение для защиты вашего имущества и финансовой безопасности
+                </p>
+            </div>
+            
+            <div class="products-grid">
+                <!-- Featured Product: Mortgage Insurance -->
+                <div class="product-card featured reveal">
+                    <div class="product-badge-corner">Рекомендуем</div>
+                    <div class="product-header">
+                        <div class="product-icon"><i class="ph ph-house"></i></div>
+                        <div class="product-info">
+                            <h3 class="product-title">Страхование ипотеки</h3>
+                            <p class="product-description">
+                                Комплексная защита вашей недвижимости, титула и жизни заёмщика. 
+                                Соответствует требованиям всех крупных банков России.
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <div class="product-features">
+                        <div class="feature-item">
+                            <div class="feature-icon"><i class="ph ph-check"></i></div>
+                            <span>Страхование квартиры/дома от рисков утраты и повреждения</span>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feature-icon"><i class="ph ph-check"></i></div>
+                            <span>Защита титула собственности и прав на недвижимость</span>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feature-icon"><i class="ph ph-check"></i></div>
+                            <span>Страхование жизни и здоровья заёмщика</span>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feature-icon"><i class="ph ph-check"></i></div>
+                            <span>Покрытие до 100% стоимости объекта недвижимости</span>
+                        </div>
+                    </div>
+                    
+                    <div class="product-cta">
+                        <button onclick="openMortgageModal()" class="btn btn-primary">Рассчитать стоимость</button>
+                        <a href="#contact" class="btn btn-secondary">Консультация</a>
+                    </div>
                 </div>
-                <div class="footer-section">
-                    <h3>Услуги</h3>
-                    <a href="#">ОСАГО</a>
-                    <a href="#">КАСКО</a>
-                    <a href="#">Ипотечное страхование</a>
-                    <a href="#">Страхование имущества</a>
+
+                <!-- OSAGO -->
+                <div class="product-card reveal">
+                    <div class="product-header">
+                        <div class="product-icon"><i class="ph ph-car"></i></div>
+                        <div class="product-info">
+                            <h3 class="product-title">ОСАГО онлайн</h3>
+                            <p class="product-description">
+                                Обязательное автострахование с мгновенной выдачей полиса
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <div class="product-features">
+                        <div class="feature-item">
+                            <div class="feature-icon"><i class="ph ph-check"></i></div>
+                            <span>Оформление за 5 минут</span>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feature-icon"><i class="ph ph-check"></i></div>
+                            <span>Скидка до 20% агента</span>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feature-icon"><i class="ph ph-check"></i></div>
+                            <span>Учёт КБМ и всех скидок</span>
+                        </div>
+                    </div>
+
+                    <div class="product-cta">
+                        <a href="#partners" class="btn btn-primary">Рассчитать</a>
+                    </div>
                 </div>
-                <div class="footer-section">
-                    <h3>Контакты</h3>
-                    <p>📞 8 (925) 039-47-00</p>
-                    <p>📧 89250394700@mail.ru</p>
-                    <p>🌐 insduddy.site</p>
+
+                <!-- KASKO -->
+                <div class="product-card reveal">
+                    <div class="product-header">
+                        <div class="product-icon"><i class="ph ph-shield-check"></i></div>
+                        <div class="product-info">
+                            <h3 class="product-title">КАСКО</h3>
+                            <p class="product-description">
+                                Добровольное страхование автомобиля от всех рисков
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <div class="product-features">
+                        <div class="feature-item">
+                            <div class="feature-icon"><i class="ph ph-check"></i></div>
+                            <span>Защита от ДТП и угона</span>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feature-icon"><i class="ph ph-check"></i></div>
+                            <span>Выплата без справок</span>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feature-icon"><i class="ph ph-check"></i></div>
+                            <span>Эвакуатор и помощь на дороге</span>
+                        </div>
+                    </div>
+                    
+                    <div class="product-cta">
+                        <a href="#partners" class="btn btn-primary">Рассчитать</a>
+                    </div>
                 </div>
             </div>
-            <div style="border-top: 1px solid rgba(255,255,255,0.1); padding-top: 20px; margin-top: 20px;">
-                <p>&copy; 2025 InsDuddy. Все права защищены.</p>
+        </div>
+    </section>
+
+    <!-- Partners Section -->
+    <section class="section partners-section" id="partners">
+        <div class="container">
+            <div class="section-header reveal">
+                <div class="section-label">Рассчитайте стоимость</div>
+                <h2 class="section-title">Онлайн-калькуляторы от наших партнёров</h2>
+                <p class="section-subtitle">
+                    Выберите калькулятор и получите точный расчёт за 2-3 минуты
+                </p>
+                <div class="partners-info-banner">
+                    <div class="info-icon"><i class="ph ph-lightbulb"></i></div>
+                    <div class="info-content">
+                        <strong>Как это работает:</strong> При нажатии на кнопку "Рассчитать" вы будете перенаправлены на защищённый сайт нашего партнёра. Там нужно заполнить короткую анкету (2-3 минуты) для индивидуального расчёта стоимости полиса с учётом ваших данных.
+                    </div>
+                </div>
+            </div>
+            
+            <div class="partners-grid">
+                <!-- Partner 1: Inssmart Mortgage - ПЕРВАЯ КАРТОЧКА -->
+                <div onclick="openMortgageModal()"
+                   class="partner-card partner-featured reveal" style="cursor: pointer;">
+                    <div class="partner-badge-top">Рекомендуем</div>
+                    <div class="partner-icon partner-icon-featured"><i class="ph ph-house"></i></div>
+                    <div class="partner-featured-content">
+                        <h3 class="partner-title">Калькулятор Ипотеки</h3>
+                        <p class="partner-description">
+                            Сравнение цен для Сбербанка, ВТБ и других. Электронный полис за 5 минут.
+                        </p>
+                    </div>
+                    <div class="partner-featured-cta">
+                        <div class="partner-cta-primary">
+                            Рассчитать <i class="ph ph-arrow-right"></i>
+                        </div>
+                        <div class="partner-notice">
+                            Откроется на этой странице
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Partner 2: Inssmart OSAGO -->
+                <a href="https://widgets.inssmart.ru/?product=/osago&token=cc3f4029-d8fa-5436-acfa-04d8d7924382&secret=a959928a-ffdd-5358-adce-9d5f1de1432c"
+                   target="_blank"
+                   class="partner-card reveal">
+                    <div class="partner-icon"><i class="ph ph-car"></i></div>
+                    <h3 class="partner-title">Калькулятор ОСАГО</h3>
+                    <p class="partner-description">
+                        Быстрый расчёт и оформление ОСАГО онлайн с учётом всех скидок и бонусов
+                    </p>
+                    <div class="partner-cta">
+                        Рассчитать ОСАГО →
+                    </div>
+                    <div class="partner-badge">Официальный партнёр</div>
+                </a>
+                
+                <!-- Partner 3: NEP All Types -->
+                <a href="https://agentpolis.ru/widgets/v2/cc106ce239509256c9caa29e2c626cdd9057c0ef?mode=referral&hasOsagoB2C=1&hasKasko=1&hasProperty=1&hasNs=1&hasAntiklesh=1&hasMortgage=1"
+                   target="_blank"
+                   class="partner-card reveal">
+                    <div class="partner-icon"><i class="ph ph-calculator"></i></div>
+                    <h3 class="partner-title">Единый калькулятор (Все виды)</h3>
+                    <p class="partner-description">
+                        Быстрый расчёт за 30 секунд для всех видов страхования
+                    </p>
+                    <div class="partner-badge">Альтернативный расчёт</div>
+                    <div class="partner-cta">
+                        Рассчитать →
+                    </div>
+                </a>
+            </div>
+            
+            <div class="trust-badge reveal">
+                <p><i class="ph ph-lock-simple"></i> Все партнёры проверены и имеют лицензии ЦБ РФ. Переход на сайты партнёров осуществляется в новой вкладке</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Advantages Section -->
+    <section class="section advantages-section" id="advantages">
+        <div class="container">
+            <div class="section-header reveal">
+                <div class="section-label">Почему мы</div>
+                <h2 class="section-title">Преимущества Моя<span class="logo-accent">Страховка</span></h2>
+            </div>
+            
+            <div class="advantages-grid">
+                <div class="advantage-card reveal">
+                    <div class="advantage-icon"><i class="ph ph-lightning"></i></div>
+                    <h3 class="advantage-title">Быстро</h3>
+                    <p class="advantage-description">
+                        Оформление полиса за 15 минут. Без очередей и посещения офиса
+                    </p>
+                </div>
+
+                <div class="advantage-card reveal">
+                    <div class="advantage-icon"><i class="ph ph-piggy-bank"></i></div>
+                    <h3 class="advantage-title">Выгодно</h3>
+                    <p class="advantage-description">
+                        Экономия до 20% за счёт агентской скидки и сравнения предложений
+                    </p>
+                </div>
+
+                <div class="advantage-card reveal">
+                    <div class="advantage-icon"><i class="ph ph-shield-check"></i></div>
+                    <h3 class="advantage-title">Надёжно</h3>
+                    <p class="advantage-description">
+                        Работаем только с компаниями, имеющими лицензию ЦБ РФ
+                    </p>
+                </div>
+
+                <div class="advantage-card reveal">
+                    <div class="advantage-icon"><i class="ph ph-device-mobile"></i></div>
+                    <h3 class="advantage-title">Удобно</h3>
+                    <p class="advantage-description">
+                        Полный цикл оформления онлайн с любого устройства
+                    </p>
+                </div>
+
+                <div class="advantage-card reveal">
+                    <div class="advantage-icon"><i class="ph ph-target"></i></div>
+                    <h3 class="advantage-title">Прозрачно</h3>
+                    <p class="advantage-description">
+                        Никаких скрытых комиссий. Всё понятно и честно
+                    </p>
+                </div>
+
+                <div class="advantage-card reveal">
+                    <div class="advantage-icon"><i class="ph ph-headset"></i></div>
+                    <h3 class="advantage-title">Поддержка 24/7</h3>
+                    <p class="advantage-description">
+                        Наши специалисты всегда готовы помочь и ответить на вопросы
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="section cta-section">
+        <div class="container">
+            <div class="cta-content reveal">
+                <h2 class="cta-title">Защитите свою недвижимость сегодня</h2>
+                <p class="cta-subtitle">
+                    Получите персональное предложение по ипотечному страхованию за 2 минуты
+                </p>
+                <div class="hero-cta">
+                    <a href="#partners" class="btn btn-primary">
+                        Рассчитать стоимость
+                        <span>→</span>
+                    </a>
+                    <a href="tel:+79250394700" class="btn btn-secondary">
+                        Позвонить нам
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer" id="contact">
+        <div class="footer-container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <h3>МояСтраховка</h3>
+                    <p>
+                        Надёжное страхование онлайн для всех регионов России. 
+                        Профессиональный подход к защите вашего имущества и финансовой безопасности.
+                    </p>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Услуги</h4>
+                    <div class="footer-links">
+                        <a href="#products">Страхование ипотеки</a>
+                        <a href="#products">ОСАГО</a>
+                        <a href="#products">КАСКО</a>
+                        <a href="#products">Страхование имущества</a>
+                    </div>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Компания</h4>
+                    <div class="footer-links">
+                        <a href="#partners">Партнёры</a>
+                        <a href="#advantages">О нас</a>
+                        <a href="#contact">Контакты</a>
+                    </div>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Контакты</h4>
+                    <div class="footer-links">
+                        <a href="tel:+79250394700"><i class="ph ph-phone"></i> 8 (925) 039-47-00</a>
+                        <a href="mailto:info@moyastrahovka.ru"><i class="ph ph-envelope-simple"></i> info@moyastrahovka.ru</a>
+                        <a href="https://moyastrahovka.ru"><i class="ph ph-globe"></i> moyastrahovka.ru</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 МояСтраховка.ru. Все права защищены.</p>
             </div>
         </div>
     </footer>
 
     <script>
-        // Smooth scrolling
+        // Mobile menu toggle
+        const mobileMenuToggle = document.getElementById('mobileMenuToggle');
+        const navMenu = document.getElementById('navMenu');
+        
+        if (mobileMenuToggle) {
+            mobileMenuToggle.addEventListener('click', () => {
+                mobileMenuToggle.classList.toggle('active');
+                navMenu.classList.toggle('active');
+            });
+            
+            // Close menu when clicking on a link
+            document.querySelectorAll('.nav-link').forEach(link => {
+                link.addEventListener('click', () => {
+                    mobileMenuToggle.classList.remove('active');
+                    navMenu.classList.remove('active');
+                });
+            });
+            
+            // Close menu when clicking outside
+            document.addEventListener('click', (e) => {
+                if (!mobileMenuToggle.contains(e.target) && !navMenu.contains(e.target)) {
+                    mobileMenuToggle.classList.remove('active');
+                    navMenu.classList.remove('active');
+                }
+            });
+        }
+        
+        // Header scroll effect
+        const header = document.getElementById('header');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 100) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+
+        // Smooth scrolling for anchor links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
                 const target = document.querySelector(this.getAttribute('href'));
                 if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
+                    const headerOffset = 84;
+                    const elementPosition = target.getBoundingClientRect().top;
+                    const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+                    
+                    window.scrollTo({
+                        top: offsetPosition,
+                        behavior: 'smooth'
                     });
                 }
             });
         });
 
-        // Scroll animations
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
-        };
-
-        const observer = new IntersectionObserver((entries) => {
+        // Scroll reveal animation
+        const revealElements = document.querySelectorAll('.reveal');
+        
+        const revealObserver = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
-                    entry.target.classList.add('animated');
+                    entry.target.classList.add('active');
                 }
             });
-        }, observerOptions);
-
-        document.querySelectorAll('.animate-on-scroll').forEach(el => {
-            observer.observe(el);
+        }, {
+            threshold: 0.15,
+            rootMargin: '0px 0px -50px 0px'
         });
 
-        // Header background on scroll
-        window.addEventListener('scroll', () => {
-            const header = document.querySelector('.header');
-            if (window.scrollY > 100) {
-                header.style.background = 'rgba(255, 255, 255, 0.98)';
-            } else {
-                header.style.background = 'rgba(255, 255, 255, 0.95)';
-            }
+        revealElements.forEach(el => {
+            revealObserver.observe(el);
         });
 
-        // Inssmart Widget Management
-        let currentProduct = 'osago';
+        // Modal window logic
+        const modal = document.getElementById('mortgageModal');
         let widgetLoaded = false;
 
-        function loadInssmartWidget(product) {
+        function openMortgageModal() {
+            modal.classList.add('active');
+            document.body.style.overflow = 'hidden'; // Блокируем скролл сайта
+
+            // Загружаем виджет только при первом открытии модалки
+            if (!widgetLoaded) {
+                loadInssmartWidget();
+                widgetLoaded = true;
+            }
+        }
+
+        function loadInssmartWidget() {
             const container = document.getElementById('inssmart-widget-container');
-            const spinner = document.getElementById('loading-spinner');
-            
-            // Show loading spinner
-            spinner.style.display = 'flex';
-            
-            // Clear any existing widget
-            const existingWidget = container.querySelector('#inssmart-b2c');
-            if (existingWidget) {
-                existingWidget.remove();
-            }
-            
-            // Remove existing script
-            const existingScript = document.querySelector('script[data-id="inssmart-b2c"]');
-            if (existingScript) {
-                existingScript.remove();
-            }
-            
-            // Create widget container div
-            const widgetDiv = document.createElement('div');
-            widgetDiv.id = 'inssmart-b2c';
-            container.appendChild(widgetDiv);
-            
-            // Create new script element with your exact parameters
+            if (!container) return;
+
             const script = document.createElement('script');
             script.type = 'text/javascript';
             script.src = 'https://widgets.inssmart.ru/widgets/b2c-frame.loader.js';
             script.setAttribute('data-id', 'inssmart-b2c');
             script.setAttribute('data-origin', 'https://widgets.inssmart.ru');
-            script.setAttribute('data-product', product === 'osago' ? '/osago' : '/mortgage');
-            
-            // ⭐ ВАШИ РЕАЛЬНЫЕ ТОКЕНЫ ИЗ СКРИНШОТА:
-            script.setAttribute('data-token', 'cc3f4029-d8fa-5436-acfa-04d8d7924382');
-            script.setAttribute('data-secret', 'a959928a-ffdd-5358-adce-9d5f1de1432c');
-            
-            // Hide spinner after widget loads
-            script.onload = function() {
-                setTimeout(() => {
-                    spinner.style.display = 'none';
-                }, 2000);
-            };
-            
-            script.onerror = function() {
-                spinner.innerHTML = '<p style="color: #ff6b6b;">Ошибка загрузки виджета</p>';
-            };
-            
-            // Append script to head for better loading
-            document.head.appendChild(script);
+            script.setAttribute('data-product', '/mortgage');
+            script.setAttribute('data-token', 'a559a1ef-ae29-532a-982e-64d567af1c5a');
+            script.setAttribute('data-secret', '5afcbbfc-8dca-5463-bf9f-3120829d9182');
+
+            container.appendChild(script);
         }
 
-        function switchInssmartProduct(product) {
-            if (currentProduct === product) return;
-            
-            currentProduct = product;
-            
-            // Update tab buttons
-            document.querySelectorAll('.tab-btn').forEach(btn => {
-                btn.classList.remove('active');
-                btn.style.background = 'transparent';
-                btn.style.color = '#666';
-            });
-            
-            const activeTab = document.getElementById(product + '-tab');
-            activeTab.classList.add('active');
-            activeTab.style.background = 'linear-gradient(135deg, #667eea, #764ba2)';
-            activeTab.style.color = 'white';
-            
-            // Load appropriate widget
-            loadInssmartWidget(product);
+        function closeMortgageModal() {
+            modal.classList.remove('active');
+            document.body.style.overflow = ''; // Возвращаем скролл
         }
 
-        // Initialize widget on page load
-        document.addEventListener('DOMContentLoaded', function() {
-           // loadInssmartWidget('osago'); // Закомментированный вызов скрипта инссмарт
-        });
-
-        // Calculator function
-        function calculateInsurance() {
-            // This function has been replaced by partner calculators
-            alert('Используйте калькуляторы наших партнеров выше для точного расчета стоимости!');
-        }
-
-        // Parallax effect for background
-        window.addEventListener('scroll', () => {
-            const scrolled = window.pageYOffset;
-            const bg = document.querySelector('.bg-animation');
-            bg.style.transform = `translateY(${scrolled * 0.5}px)`;
-        });
-
-        // Pre-loader for external links
-        const preloader = document.getElementById('preloader');
-        const externalLinks = document.querySelectorAll('a[target="_blank"]');
-
-        externalLinks.forEach(link => {
-            link.addEventListener('click', function(e) {
-                e.preventDefault();
-                const url = this.href;
-
-                // Открываем пустое окно СРАЗУ (в момент клика) - это не блокируется браузерами
-                const newWindow = window.open('about:blank', '_blank');
-
-                // Показываем прелоадер
-                preloader.classList.add('active');
-
-                // Через 1.5 секунды перенаправляем открытое окно на нужный URL
-                setTimeout(() => {
-                    if (newWindow) {
-                        newWindow.location.href = url;
-                    }
-                    // Скрываем прелоадер
-                    preloader.classList.remove('active');
-                }, 1500);
-            });
+        // Закрытие по клику на темный фон
+        modal.addEventListener('click', (e) => {
+            if (e.target === modal) closeMortgageModal();
         });
     </script>
 
     <!-- Mobile Sticky CTA Bar -->
     <div class="mobile-sticky-cta">
-        <a href="#calculator" class="btn btn-primary" style="width: 100%; justify-content: center;">
-            Рассчитать страховку онлайн
-        </a>
+        <button onclick="openMortgageModal()" class="btn btn-primary" style="width: 100%; justify-content: center; border: none;">
+            Рассчитать ипотеку онлайн
+        </button>
+    </div>
+
+    <!-- Modal Overlay -->
+    <div class="modal-overlay" id="mortgageModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title">Рассчитать ипотеку</h3>
+                <button class="modal-close" onclick="closeMortgageModal()">&times;</button>
+            </div>
+            <div class="modal-body" style="position: relative; min-height: 300px;">
+                <!-- Лоадер (виден пока грузится скрипт) -->
+                <div id="widget-loader" style="position: absolute; top: 50px; left: 0; width: 100%; text-align: center; color: #666; z-index: 0;">
+                    <div style="margin: 0 auto 10px; width: 30px; height: 30px; border: 3px solid rgba(0,0,0,0.1); border-top-color: var(--accent-500); border-radius: 50%; animation: spin 1s linear infinite;"></div>
+                    <p>Загрузка калькулятора...</p>
+                    <style>@keyframes spin { to { transform: rotate(360deg); } }</style>
+                </div>
+
+                <!-- Контейнер для динамической загрузки виджета -->
+                <div id="inssmart-widget-container" style="position: relative; z-index: 1; background: white; min-height: 300px;">
+                </div>
+            </div>
+        </div>
     </div>
 </body>
 </html>
