@@ -2191,23 +2191,27 @@
 
             // Загружаем виджет только при первом открытии модалки
             if (!widgetLoaded) {
-                loadInssmartWidget();
+                // Небольшая задержка, чтобы модалка успела отобразиться
+                setTimeout(loadInssmartWidget, 100);
                 widgetLoaded = true;
             }
         }
 
         function loadInssmartWidget() {
-            const widgetElement = document.getElementById('inssmart-b2c');
-            if (!widgetElement) return;
+            // Находим контейнер ВНУТРИ модального окна
+            const container = document.getElementById('inssmart-widget-container');
+            if (!container) return;
 
             const script = document.createElement('script');
             script.type = 'text/javascript';
             script.src = 'https://widgets.inssmart.ru/widgets/b2c-frame.loader.js';
-            script.setAttribute('data-id', 'inssmart-b2c');
-            script.setAttribute('data-origin', 'https://widgets.inssmart.ru');
-            script.setAttribute('data-product', '/mortgage');
-            script.setAttribute('data-token', 'a559a1ef-ae29-532a-982e-64d567af1c5a');
-            script.setAttribute('data-secret', '5afcbbfc-8dca-5463-bf9f-3120829d9182');
+
+            // Параметры виджета через dataset
+            script.dataset.id = 'inssmart-b2c';
+            script.dataset.origin = 'https://widgets.inssmart.ru';
+            script.dataset.product = '/mortgage';
+            script.dataset.token = 'a559a1ef-ae29-532a-982e-64d567af1c5a';
+            script.dataset.secret = '5afcbbfc-8dca-5463-bf9f-3120829d9182';
 
             // Скрываем лоадер когда скрипт загружен
             script.onload = function() {
@@ -2215,7 +2219,8 @@
                 if (loader) loader.style.display = 'none';
             };
 
-            document.body.appendChild(script);
+            // ВАЖНО: Добавляем скрипт В КОНТЕЙНЕР МОДАЛКИ
+            container.appendChild(script);
         }
 
         function closeMortgageModal() {
