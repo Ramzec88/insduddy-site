@@ -2181,11 +2181,14 @@
             revealObserver.observe(el);
         });
 
-        // Modal window logic
-        const modal = document.getElementById('mortgageModal');
+        // Modal window logic - переменные инициализируются после загрузки DOM
+        let modal = null;
         let widgetLoaded = false;
 
         function openMortgageModal() {
+            if (!modal) modal = document.getElementById('mortgageModal');
+            if (!modal) return;
+
             modal.classList.add('active');
             document.body.style.overflow = 'hidden'; // Блокируем скролл сайта
 
@@ -2220,13 +2223,21 @@
         }
 
         function closeMortgageModal() {
+            if (!modal) modal = document.getElementById('mortgageModal');
+            if (!modal) return;
+
             modal.classList.remove('active');
             document.body.style.overflow = ''; // Возвращаем скролл
         }
 
-        // Закрытие по клику на темный фон
-        modal.addEventListener('click', (e) => {
-            if (e.target === modal) closeMortgageModal();
+        // Закрытие по клику на темный фон - инициализируем после загрузки DOM
+        document.addEventListener('DOMContentLoaded', function() {
+            modal = document.getElementById('mortgageModal');
+            if (modal) {
+                modal.addEventListener('click', (e) => {
+                    if (e.target === modal) closeMortgageModal();
+                });
+            }
         });
     </script>
 
