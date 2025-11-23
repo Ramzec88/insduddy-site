@@ -1864,7 +1864,7 @@
                     </div>
 
                     <div class="product-cta">
-                        <a href="#partners" class="btn btn-primary">Рассчитать</a>
+                        <button onclick="openOsagoModal()" class="btn btn-primary">Рассчитать</button>
                     </div>
                 </div>
 
@@ -1943,9 +1943,8 @@
                 </div>
                 
                 <!-- Partner 2: Inssmart OSAGO -->
-                <a href="https://widgets.inssmart.ru/?product=/osago&token=cc3f4029-d8fa-5436-acfa-04d8d7924382&secret=a959928a-ffdd-5358-adce-9d5f1de1432c"
-                   target="_blank"
-                   class="partner-card reveal">
+                <div onclick="openOsagoModal()"
+                   class="partner-card reveal" style="cursor: pointer;">
                     <div class="partner-icon"><i class="ph ph-car"></i></div>
                     <h3 class="partner-title">Калькулятор ОСАГО</h3>
                     <p class="partner-description">
@@ -1955,7 +1954,7 @@
                         Рассчитать ОСАГО →
                     </div>
                     <div class="partner-badge">Официальный партнёр</div>
-                </a>
+                </div>
                 
                 <!-- Partner 3: NEP All Types -->
                 <a href="https://agentpolis.ru/widgets/v2/cc106ce239509256c9caa29e2c626cdd9057c0ef?mode=referral&hasOsagoB2C=1&hasKasko=1&hasProperty=1&hasNs=1&hasAntiklesh=1&hasMortgage=1"
@@ -2214,12 +2213,42 @@
             document.body.style.overflow = ''; // Возвращаем скролл
         }
 
+        // === ОСАГО Modal ===
+        let osagoModal = null;
+
+        function openOsagoModal() {
+            if (!osagoModal) osagoModal = document.getElementById('osagoModal');
+            if (!osagoModal) return;
+
+            osagoModal.classList.add('active');
+            document.body.style.overflow = 'hidden';
+
+            // Скрываем лоадер
+            const loader = document.getElementById('osago-widget-loader');
+            if (loader) loader.style.display = 'none';
+        }
+
+        function closeOsagoModal() {
+            if (!osagoModal) osagoModal = document.getElementById('osagoModal');
+            if (!osagoModal) return;
+
+            osagoModal.classList.remove('active');
+            document.body.style.overflow = '';
+        }
+
         // Закрытие по клику на темный фон - инициализируем после загрузки DOM
         document.addEventListener('DOMContentLoaded', function() {
             modal = document.getElementById('mortgageModal');
             if (modal) {
                 modal.addEventListener('click', (e) => {
                     if (e.target === modal) closeMortgageModal();
+                });
+            }
+
+            osagoModal = document.getElementById('osagoModal');
+            if (osagoModal) {
+                osagoModal.addEventListener('click', (e) => {
+                    if (e.target === osagoModal) closeOsagoModal();
                 });
             }
         });
@@ -2258,6 +2287,37 @@
                         data-product="/mortgage"
                         data-token="a559a1ef-ae29-532a-982e-64d567af1c5a"
                         data-secret="5afcbbfc-8dca-5463-bf9f-3120829d9182">
+                    </script>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- OSAGO Modal Overlay -->
+    <div class="modal-overlay" id="osagoModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title">Рассчитать ОСАГО</h3>
+                <button class="modal-close" onclick="closeOsagoModal()">&times;</button>
+            </div>
+            <div class="modal-body" style="position: relative; min-height: 300px;">
+                <!-- Лоадер -->
+                <div id="osago-widget-loader" style="position: absolute; top: 50px; left: 0; width: 100%; text-align: center; color: #666; z-index: 0;">
+                    <div style="margin: 0 auto 10px; width: 30px; height: 30px; border: 3px solid rgba(0,0,0,0.1); border-top-color: var(--accent-500); border-radius: 50%; animation: spin 1s linear infinite;"></div>
+                    <p>Загрузка калькулятора...</p>
+                </div>
+
+                <!-- Контейнер виджета Inssmart ОСАГО -->
+                <div id="inssmart-osago-container" style="position: relative; z-index: 1; background: white; min-height: 300px;">
+                    <div id="inssmart-osago"></div>
+                    <script
+                        type="text/javascript"
+                        src="https://widgets.inssmart.ru/widgets/b2c-frame.loader.js"
+                        data-id="inssmart-osago"
+                        data-origin="https://widgets.inssmart.ru"
+                        data-product="/eosago"
+                        data-token="3067e739-11bc-51d3-bdb3-aed23e20e2da"
+                        data-secret="ff8ef8b9-c909-5ed3-9b62-d57e432056b6">
                     </script>
                 </div>
             </div>
