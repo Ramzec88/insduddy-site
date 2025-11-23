@@ -2198,20 +2198,33 @@
         }
 
         function loadInssmartWidget() {
-            // Находим контейнер ВНУТРИ модального окна
             const container = document.getElementById('inssmart-widget-container');
             if (!container) return;
 
+            // 1. Очищаем контейнер на случай повторных вызовов
+            container.innerHTML = '';
+
+            // 2. Создаем целевой DIV, в который виджет будет отрисован
+            // Элемент должен существовать ДО загрузки скрипта
+            const widgetTarget = document.createElement('div');
+            widgetTarget.id = 'inssmart-b2c';
+            widgetTarget.style.width = '100%';
+            widgetTarget.style.height = '100%';
+            container.appendChild(widgetTarget);
+
+            // 3. Создаем скрипт
             const script = document.createElement('script');
             script.type = 'text/javascript';
             script.src = 'https://widgets.inssmart.ru/widgets/b2c-frame.loader.js';
+            script.async = true;
 
-            // Параметры виджета через dataset
-            script.dataset.id = 'inssmart-b2c';
-            script.dataset.origin = 'https://widgets.inssmart.ru';
-            script.dataset.product = '/mortgage';
-            script.dataset.token = 'a559a1ef-ae29-532a-982e-64d567af1c5a';
-            script.dataset.secret = '5afcbbfc-8dca-5463-bf9f-3120829d9182';
+            // 4. Используем setAttribute вместо dataset для надежности
+            // Многие загрузчики читают именно атрибуты HTML через getAttribute
+            script.setAttribute('data-id', 'inssmart-b2c');
+            script.setAttribute('data-origin', 'https://widgets.inssmart.ru');
+            script.setAttribute('data-product', '/mortgage');
+            script.setAttribute('data-token', 'a559a1ef-ae29-532a-982e-64d567af1c5a');
+            script.setAttribute('data-secret', '5afcbbfc-8dca-5463-bf9f-3120829d9182');
 
             // Скрываем лоадер когда скрипт загружен
             script.onload = function() {
@@ -2219,7 +2232,7 @@
                 if (loader) loader.style.display = 'none';
             };
 
-            // ВАЖНО: Добавляем скрипт В КОНТЕЙНЕР МОДАЛКИ
+            // 5. Добавляем скрипт в контейнер ПОСЛЕ создания widgetTarget
             container.appendChild(script);
         }
 
@@ -2257,9 +2270,7 @@
                 </div>
 
                 <!-- Контейнер для динамической загрузки виджета -->
-                <div id="inssmart-widget-container" style="position: relative; z-index: 1; background: white; min-height: 300px;">
-                    <div id="inssmart-b2c"></div>
-                </div>
+                <div id="inssmart-widget-container" style="position: relative; z-index: 1; background: white; min-height: 300px;"></div>
             </div>
         </div>
     </div>
